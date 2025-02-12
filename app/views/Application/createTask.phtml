@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<form action="<?php echo WEB_ROOT; ?>/task/createTask" method="POST" class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-4 text-center">Create a New Task</h2>
+
+        <label for="title" class="block text-sm font-medium text-gray-700">Task's Title</label>
+        <input type="text" id="title" name="title" required 
+               placeholder="Enter the task title"
+               class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+        <label for="state" class="block mt-3 text-sm font-medium text-gray-700">State</label>
+        <select id="state" name="state" required 
+                class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="" disabled selected>Select a state</option>
+            <option value="pending">Pending</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="ended">Ended</option>
+        </select>
+
+        <label for="description" class="block mt-3 text-sm font-medium text-gray-700">Description</label>
+        <textarea id="description" name="description" required 
+                  placeholder="Describe the task in detail"
+                  class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+
+        <label for="start_time" class="block mt-3 text-sm font-medium text-gray-700">Starting Time</label>
+        <input type="datetime-local" id="start_time" name="start_time" required 
+               class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+        <label for="end_time" class="block mt-3 text-sm font-medium text-gray-700">Ending Time</label>
+        <input type="datetime-local" id="end_time" name="end_time" required 
+               class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+        <label for="created_by" class="block mt-3 text-sm font-medium text-gray-700">Created by</label>
+        <input type="text" id="created_by" name="created_by" required 
+               placeholder="Enter your name"
+               class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+        <div class="mt-4 flex justify-between">
+            <button type="button" onclick="history.back()" 
+                    class="w-1/2 bg-gray-400 text-white py-2 rounded-md hover:bg-gray-500 transition duration-300 mr-2">
+                Cancel
+            </button>
+            <button type="submit" 
+                    class="w-1/2 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">
+                Create Task
+            </button>
+        </div>
+    </form>
+
+</body>
+</html>
+
+
+ 

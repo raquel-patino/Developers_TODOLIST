@@ -24,6 +24,15 @@ function showDataAction(){
 
 }
 
+function createTaskAction(){
+
+    $tasks =$this->taskModel->fetchAll();
+
+    $this->view->tasks= $tasks;
+
+
+
+
 }
 	
 
