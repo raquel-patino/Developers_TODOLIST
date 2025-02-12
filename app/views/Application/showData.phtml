@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">My To-Do</h1>
+
+        <!-- Botón para agregar tarea -->
+        <div class="flex justify-between items-center mb-4">
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
+                <span class="text-lg">➕</span>
+                <span class="ml-2">Add New Task</span>
+            </button>
+            <input type="text" placeholder="Search..." class="border px-4 py-2 rounded-lg w-1/3">
+        </div>
+
+        <!-- Lista de tareas -->
+        <ul class="space-y-4">
+            <?php if (!empty($this->tasks)): ?>
+                <?php foreach ($this->tasks as $task): ?>
+                    <li class="bg-white p-4 rounded-lg shadow flex flex-col">
+                        <div class="flex justify-between items-center">
+                            <span class="px-3 py-1 rounded-full text-white text-xs font-bold 
+                                <?php 
+                                    echo $task['estado'] === 'pendiente' ? 'bg-orange-500' : 
+                                         ($task['estado'] === 'en progreso' ? 'bg-green-500' : 'bg-red-500'); 
+                                ?>">
+                                <?= ucfirst($task['estado']) ?>
+                            </span>
+                            <button>▼</button>
+                        </div>
+                        <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['titulo']) ?></h2>
+                        <p class="text-gray-600 text-sm"><?= htmlspecialchars($task['descripcion']) ?></p>
+                        <div class="text-gray-500 text-xs mt-2">
+                            <span>Start: 12:30</span> - 
+                            <span>End: 20:30</span> | 
+                            <span class="font-bold">Added By: User</span>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-center text-gray-600">No hay tareas registradas.</p>
+            <?php endif; ?>
+        </ul>
+    </div>
+</body>
+</html>
