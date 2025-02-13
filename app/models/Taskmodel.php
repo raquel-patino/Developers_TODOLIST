@@ -8,7 +8,7 @@ protected $data= [];
 function __construct($file)
 {
     
-    $this->filePath= __DIR__ . '/../data/' . $file;
+    $this->filePath= ROOT_PATH . '/data/'. $file;
     $this->loadData();
 
 }
@@ -29,7 +29,7 @@ protected function loadData()
 
 public function fetchAll()
     {
-        
+       
         return $this->data;
     }
 

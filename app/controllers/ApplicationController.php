@@ -1,11 +1,12 @@
 <?php
-require_once __DIR__ . '/../lib/base/Controller.php';// probablemente esta ruta no es correcta
-require_once __DIR__ . '/../app/models/Taskmodel.php';
+require_once ROOT_PATH . '/lib/base/Controller.php';
+require_once ROOT_PATH . '/app/models/TaskModel.php';
+
 /**
  * Base controller for the application.
  * Add general things in this controller.
  */
-class ApplicatonController extends Controller 
+class ApplicationController extends Controller 
 {
 
     private $taskModel;
@@ -19,9 +20,20 @@ function showDataAction(){
 
     $tasks =$this->taskModel->fetchAll();
 
+    if (!is_array($tasks)) {
+        $tasks = [];
+    }
+
+    // Si el primer elemento no es un array, lo convertimos en una lista de arrays
+    if (!empty($tasks) && !is_array(reset($tasks))) {
+        $tasks = [$tasks];
+    }
+
     $this->view->tasks= $tasks;
+}
 
-
+function getFormAction (){
+    
 }
 
 }

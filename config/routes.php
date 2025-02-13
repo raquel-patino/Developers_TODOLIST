@@ -11,4 +11,5 @@
  */
 $routes = array(
 	'/' => 'Application#showData',
+	'/form' => 'Application#getForm'
 );

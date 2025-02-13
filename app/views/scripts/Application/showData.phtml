@@ -13,15 +13,15 @@
         <!-- Botón para agregar tarea -->
         <div class="flex justify-between items-center mb-4">
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
-                <span class="text-lg">➕</span>
+                <span class="text-lg"><a href="<?= $_SERVER['REQUEST_URI'] ?>form">➕</a></span>
                 <span class="ml-2">Add New Task</span>
-            </button>
+                </button>
             <input type="text" placeholder="Search..." class="border px-4 py-2 rounded-lg w-1/3">
         </div>
 
         <!-- Lista de tareas -->
         <ul class="space-y-4">
-            <?php if (!empty($this->tasks)): ?>
+            <?php if(count($this->tasks)>0): ?>
                 <?php foreach ($this->tasks as $task): ?>
                     <li class="bg-white p-4 rounded-lg shadow flex flex-col">
                         <div class="flex justify-between items-center">
