@@ -33,12 +33,31 @@ public function fetchAll()
         return $this->data;
     }
 
+    public function createTask(array $taskData) 
+    {
+        $newTask = [
+            'id' => $this->generateId(),
+            'title' => $taskData['title'],
+            'description' => $taskData['description'],
+            'state' => $taskData['state'],
+            'created_by' => $taskData['created_by'],
+            'start_time' => $taskData['start_time'],
+            'end_time' => $taskData['end_time'],
+        ];       
+
+        $this->data[] = $newTask;
+        
+        $this->saveData();
+
+        return $this->saveData();
+    }
+    
     protected function generateId() 
     {
         $ids = array_column($this->data, 'id');
         return empty($ids) ? 1 : max($ids) + 1;
     }
-    
+
     protected function saveData() 
     {
         return file_put_contents($this->filePath, json_encode($this->data, JSON_PRETTY_PRINT))!== false;
