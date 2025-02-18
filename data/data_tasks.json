@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "titulo": "Comprar v\u00edveres",
+        "descripcion": "Comprar leche, pan, huevos y caf\u00e9 en el supermercado.",
+        "estado": "pendiente"
+    },
+    {
+        "id": 2,
+        "titulo": "Hacer ejercicio",
+        "descripcion": "Completar una rutina de 30 minutos de cardio y estiramientos.",
+        "estado": "en progreso"
+    },
+    {
+        "id": 3,
+        "titulo": "Estudiar PHP",
+        "descripcion": "Repasar el tema de POO en PHP y hacer ejercicios pr\u00e1cticos.",
+        "estado": "pendiente"
+    },
+    {
+        "id": 4,
+        "titulo": "Enviar informe",
+        "descripcion": "Redactar y enviar el informe semanal al jefe de equipo.",
+        "estado": "completado"
+    },
+    {
+        "id": 5,
+        "titulo": "Revisar c\u00f3digo",
+        "descripcion": "Revisar el c\u00f3digo del proyecto MVC y optimizar funciones.",
+        "estado": "en progreso"
+    },
+    {
+        "id": 6,
+        "titulo": "Llamar a Juan",
+        "descripcion": "Confirmar con Juan la reuni\u00f3n del viernes a las 10 AM.",
+        "estado": "pendiente"
+    },
+    {
+        "id": 7,
+        "titulo": "Actualizar aplicaci\u00f3n",
+        "descripcion": "Subir la nueva versi\u00f3n de la app con las correcciones de bugs.",
+        "estado": "completado"
+    },
+    {
+        "id": 8,
+        "title": "Prueba 1",
+        "description": "Primera prueba despu\u00e9s de actualizar",
+        "state": "pendiente",
+        "created_by": "Lena",
+        "start_time": "2025-02-26T12:12",
+        "end_time": "2025-03-08T13:13"
+    }
+]
