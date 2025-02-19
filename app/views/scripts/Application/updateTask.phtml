@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Edit Task</h1>
+
+        <form action="<?php echo WEB_ROOT; ?>/editTask" method="POST" class="space-y-4">
+            <input type="hidden" name="task_id" value="<?php echo htmlspecialchars($task['id']); ?>">
+
+            <div>
+                <label for="title" class="block text-sm font-medium text-gray-700">Task's Title</label>
+                <input type="text" id="title" name="title" required 
+                       value="<?php echo htmlspecialchars($task['title']); ?>"
+                       class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div>
+                <label for="state" class="block text-sm font-medium text-gray-700">State</label>
+                <select id="state" name="state" required 
+                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <option value="pending" <?php echo $task['state'] == 'pending' ? 'selected' : ''; ?>>Pending</option>
+                    <option value="ongoing" <?php echo $task['state'] == 'ongoing' ? 'selected' : ''; ?>>Ongoing</option>
+                    <option value="ended" <?php echo $task['state'] == 'ended' ? 'selected' : ''; ?>>Ended</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea id="description" name="description" required 
+                          class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"><?php echo htmlspecialchars($task['description']); ?></textarea>
+            </div>
+
+            <div>
+                <label for="start_time" class="block text-sm font-medium text-gray-700">Starting Time</label>
+                <input type="datetime-local" id="start_time" name="start_time" required 
+                       value="<?php echo date('Y-m-d\TH:i', strtotime($task['start_time'])); ?>"
+                       class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div>
+                <label for="end_time" class="block text-sm font-medium text-gray-700">Ending Time</label>
+                <input type="datetime-local" id="end_time" name="end_time" required 
+                       value="<?php echo date('Y-m-d\TH:i', strtotime($task['end_time'])); ?>"
+                       class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div>
+                <label for="created_by" class="block text-sm font-medium text-gray-700">Created by</label>
+                <input type="text" id="created_by" name="created_by" required 
+                       value="<?php echo htmlspecialchars($task['created_by']); ?>"
+                       class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div class="mt-4 flex justify-between">
+                <button type="button" onclick="history.back()" 
+                        class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-gray-500 transition duration-300 mr-2">
+                    Cancel
+                </button>
+                <button type="submit" 
+                        class="w-1/2 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
