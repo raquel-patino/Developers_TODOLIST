@@ -19,9 +19,20 @@ function showDataAction(){
 
     $tasks =$this->taskModel->fetchAll();
 
+    if (!is_array($tasks)) {
+        $tasks = [];
+    }
+
+    // Si el primer elemento no es un array, lo convertimos en una lista de arrays
+    if (!empty($tasks) && !is_array(reset($tasks))) {
+        $tasks = [$tasks];
+    }
+
     $this->view->tasks= $tasks;
+}
 
-
+function getFormAction (){
+    
 }
 
 function createTaskAction() 

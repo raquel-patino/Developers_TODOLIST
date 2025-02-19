@@ -4,6 +4,7 @@ error_reporting(E_ALL|E_STRICT);
 ini_set('display_errors', 1);
 date_default_timezone_set('CET');
 
+
 // defines the web root
 define('WEB_ROOT', substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NAME'], '/index.php')));
 // defindes the path to the files
@@ -43,6 +44,7 @@ function autoloader($className) {
 
 // activates the autoloader
 spl_autoload_register('autoloader');
+
 
 $router = new Router();
 $router->execute($routes);

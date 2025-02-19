@@ -29,11 +29,11 @@ protected function loadData()
 
 public function fetchAll()
     {
-        
+       
         return $this->data;
     }
 
-    public function createTask(array $taskData) 
+public function createTask(array $taskData) 
     {
         $newTask = [
             'id' => $this->generateId(),
