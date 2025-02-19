@@ -73,6 +73,28 @@ function editTaskAction()
     }
 }
 
+function updateTaskAction()
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $taskData = [
+            'id'          => htmlspecialchars($_POST['task_id']),
+            'title'       => htmlspecialchars($_POST['title']),
+            'description' => htmlspecialchars($_POST['description']),
+            'state'       => in_array($_POST['state'], ['pendiente', 'en progreso', 'completado']) ? $_POST['state'] : 'pendiente',
+            'created_by'  => htmlspecialchars($_POST['created_by']),
+            'start_time'  => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
+            'end_time'    => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,
+        ];
+
+        if ($this->taskModel->updateTask($taskData)) {
+            header('Location: ' . WEB_ROOT . '/');
+            exit();
+        } else {
+            $this->view->error = "No se pudo actualizar la tarea.";
+        }
+    }
+}
+
 }
 
 ?>
