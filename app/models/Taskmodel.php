@@ -33,6 +33,16 @@ public function fetchAll()
         return $this->data;
     }
 
+    public function fetchTaskById($id) 
+    {
+        foreach ($this->data as $task) {
+            if ($task['id'] == $id) {
+                return $task; // Devuelve la tarea encontrada
+            }
+        }
+        return null; // Devuelve null si no se encuentra la tarea
+    }
+
 public function createTask(array $taskData) 
     {
         $newTask = [
@@ -62,6 +72,8 @@ public function createTask(array $taskData)
     {
         return file_put_contents($this->filePath, json_encode($this->data, JSON_PRETTY_PRINT))!== false;
     }
+
+
     
     public function updateTask(array $taskData)
     {

@@ -58,13 +58,9 @@ function createTaskAction()
 
 function editTaskAction()
 {
-    if (!isset($_GET['task_id'])) {
-        $this->view->error = "ID de tarea no proporcionado.";
-        return;
-    }
 
-    $taskId = $_GET['task_id'];
-    $task = $this->taskModel->fetchTaskById($taskId);
+    $id= $_POST["id"];
+    $task = $this->taskModel->fetchTaskById($id);
 
     if ($task) {
         $this->view->task = $task;

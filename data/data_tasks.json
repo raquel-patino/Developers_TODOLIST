@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "title": "Preparar presentaci\u00f3n",
-        "description": "Crear diapositivas para la reuni\u00f3n de equipo sobre el proyecto actual.",
-        "state": "pending",
-        "start_time": "2025-12-23 09:00",
-        "end_time": "2025-12-23T11:00",
-        "created_by": "Lena"
+        "title": "",
+        "description": "",
+        "state": "pendiente",
+        "start_time": null,
+        "end_time": null,
+        "created_by": ""
     },
     {
         "id": 2,
