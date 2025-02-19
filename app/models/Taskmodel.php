@@ -63,6 +63,18 @@ public function createTask(array $taskData)
         return file_put_contents($this->filePath, json_encode($this->data, JSON_PRETTY_PRINT))!== false;
     }
 
+public function deleteTask($id){
+        $tasksReduced= [];
+        foreach ($this->data as $task){
+            if ($task["id"] != $id){
+                $tasksReduced[]= $task;
+            }
+        }
+        $this->data= $tasksReduced;
+        $this->saveData();
+    
+    }
+
 
 }
 
