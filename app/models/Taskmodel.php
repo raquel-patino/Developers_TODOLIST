@@ -81,6 +81,18 @@ public function createTask(array $taskData)
         }
         return false; // Si no se encontró la tarea
     }  
+public function deleteTask($id){
+        $tasksReduced= [];
+        foreach ($this->data as $task){
+            if ($task["id"] != $id){
+                $tasksReduced[]= $task;
+            }
+        }
+        $this->data= $tasksReduced;
+        $this->saveData();
+    
+    }
+
 
 }
 
