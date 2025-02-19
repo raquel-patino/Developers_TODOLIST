@@ -56,6 +56,23 @@ function createTaskAction()
     }
 }
 
+function editTaskAction()
+{
+    if (!isset($_GET['task_id'])) {
+        $this->view->error = "ID de tarea no proporcionado.";
+        return;
+    }
+
+    $taskId = $_GET['task_id'];
+    $task = $this->taskModel->fetchTaskById($taskId);
+
+    if ($task) {
+        $this->view->task = $task;
+    } else {
+        $this->view->error = "Tarea no encontrada.";
+    }
+}
+
 }
 
 ?>
