@@ -56,6 +56,24 @@ function createTaskAction()
     }
 }
 
+function deleteAction(){
+    //comprobaciones de seguridad
+    if ($_SERVER['REQUEST_METHOD'] !== $_POST){
+        $_SESSION["error"]= "Método incorrecto";
+        header("Location: " . WEB_ROOT . "/");
+        exit();
+    }
+    if ((!isset($_POST["id"])) || empty($_POST["id"])){
+            $_SESSION["error"]= "Esta tarea no se ha podido eliminar";
+            header("Location: " . WEB_ROOT . "/");
+            exit();
+    }
+        $id= $_POST["id"];
+        $this->taskModel->deleteTask($id);
+        $_SESSION["success"]= "La tarea se ha eliminado correctamente";
+        header("Location: " . WEB_ROOT . "/");
+        exit(); 
+}
 }
 
 ?>
