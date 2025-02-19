@@ -45,10 +45,17 @@
                                 ?>">
                                 <?= ucfirst($task['state']) ?>
                             </span>
+                            <div class="flex flex-col space-y-2">
                             <form action="<?= WEB_ROOT?>/delete" method="post">
-                            <button class= "bg-green-500 text-white rounded-lg p-2" type="submit"> Delete</button>
-                            <input type= "hidden" name="id" value="<?= $task["id"]?>">
+                            <button class="bg-red-500 text-white rounded-lg px-4 py-2 w-full" type="submit">Delete</button>
+                            <input type="hidden" name="id" value="<?= $task["id"]?>">
+                            </form> 
+                            <form action="<?= WEB_ROOT?>/updateTask" method="post">
+                            <button class="bg-blue-500 text-white rounded-lg px-4 py-2 w-full" type="submit">Update</button>
+                            <input type="hidden" name="id" value="<?= $task["id"]?>">
                             </form>
+                            </div>
+
                         </div>
                         <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['title']) ?></h2>
                         <p class="text-gray-600 text-sm"><?= htmlspecialchars($task['description']) ?></p>
