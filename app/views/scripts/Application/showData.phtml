@@ -14,8 +14,13 @@
             <?= $_SESSION["success"]; ?>
         </div>
      <?php unset($_SESSION["success"]);?>
+     <?php elseif (isset($_SESSION["error"])): ?>
+        <div class="bg-red-200 text-red-800 p-4 rounded-lg mb-4">
+            <?= $_SESSION["error"]; ?>
+        </div>
+ <?php unset($_SESSION["error"]);?>
+ 
         <?php endif; ?>
-
         <!-- Botón para agregar tarea -->
         <div class="flex justify-between items-center mb-4">
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
