@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Update Task</h1>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col">
+            <form action="<?php echo WEB_ROOT; ?>/updateTask" method="POST" class="space-y-4">
+                <input type="hidden" name="id" value="<?php echo htmlspecialchars($this->task['id']); ?>">
+
+                <div>
+                    <label for="title" class="block text-sm font-medium text-gray-700">Tarea Guardada</label>
+    </div>
+</body>
+</html>
+

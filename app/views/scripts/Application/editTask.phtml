@@ -11,8 +11,8 @@
     <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
         <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Edit Task</h1>
 
-        <form action="<?php echo WEB_ROOT; ?>/editTask" method="POST" class="space-y-4">
-            <input type="hidden" name="id" value="<?php echo htmlspecialchars($this->task['id']); ?>">
+    <form action="<?php echo WEB_ROOT; ?>/updateTask" method="POST" class="space-y-4">
+        <input type="hidden" name="id" value="<?php echo htmlspecialchars($this->task['id']); ?>">
 
             <div>
                 <label for="title" class="block text-sm font-medium text-gray-700">Task's Title</label>
