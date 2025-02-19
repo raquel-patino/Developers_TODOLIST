@@ -11,5 +11,6 @@
  */
 $routes = array(
 	'/' => 'Application#showData',
-	'/form' => 'Application#getForm'
+	'/form' => 'Application#getForm',
+    '/createTask' => 'Application#createTask',
 );
