@@ -31,17 +31,13 @@ function showDataAction(){
     $this->view->tasks= $tasks;
 }
 
-function getFormAction (){
-    
-}
-
 function createTaskAction() 
 { 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $taskData = [
             'title' => htmlspecialchars($_POST['title']),
             'description' => htmlspecialchars($_POST['description']),
-            'state' => in_array($_POST['state'], ['pendiente', 'en progreso', 'completado']) ? $_POST['state'] : 'pendiente',
+            'state' => in_array($_POST['state'], ['pending', 'ongoing', 'completed']) ? $_POST['state'] : 'pending',
             'created_by' => htmlspecialchars($_POST['created_by']),
             'start_time' => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
             'end_time' => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,
@@ -52,13 +48,14 @@ function createTaskAction()
             exit();
         } else {
             $this->view->error = "No se pudo crear la tarea.";
+            exit();
         }
     }
 }
 
 function deleteAction(){
     //comprobaciones de seguridad
-    if ($_SERVER['REQUEST_METHOD'] !== $_POST){
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
         $_SESSION["error"]= "Método incorrecto";
         header("Location: " . WEB_ROOT . "/");
         exit();

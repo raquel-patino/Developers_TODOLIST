@@ -41,11 +41,11 @@
                             <span class="px-3 py-1 rounded-full text-white text-xs font-bold 
                                 <?php 
                                     echo $task['state'] === 'pending' ? 'bg-orange-500' : 
-                                         ($task['state'] === 'on going' ? 'bg-green-500' : 'bg-red-500'); 
+                                         ($task['state'] === 'ongoing' ? 'bg-green-500' : 'bg-red-500'); 
                                 ?>">
                                 <?= ucfirst($task['state']) ?>
                             </span>
-                            <form action="<?= WEB_ROOT?>/delete" method="post">
+                            <form action="<?= WEB_ROOT?>/delete" method="POST">
                             <button class= "bg-green-500 text-white rounded-lg p-2" type="submit"> Delete</button>
                             <input type= "hidden" name="id" value="<?= $task["id"]?>">
                             </form>

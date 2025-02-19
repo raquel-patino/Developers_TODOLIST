@@ -45,7 +45,7 @@ public function createTask(array $taskData)
             'end_time' => $taskData['end_time'],
         ];       
 
-        $this->data[] = $newTask;
+        array_unshift($this->data,$newTask);
         
         $this->saveData();
 
