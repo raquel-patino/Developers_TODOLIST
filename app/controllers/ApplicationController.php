@@ -55,25 +55,28 @@ function createTaskAction()
 
 function editTaskAction()
 {
+    $id = $_POST["id"] ?? null;
 
-    $id= $_POST["id"];
     $task = $this->taskModel->fetchTaskById($id);
 
     if ($task) {
         $this->view->task = $task;
     } else {
-        $this->view->error = "Tarea no encontrada.";
+        $_SESSION["error"] = "Tarea no encontrada.";
+        header("Location: " . WEB_ROOT . "/");
+        exit();
     }
 }
+
 
 function updateTaskAction()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $taskData = [
-            'id'          => htmlspecialchars($_POST['task_id']),
+            'id'          => htmlspecialchars($_POST['id']),
             'title'       => htmlspecialchars($_POST['title']),
             'description' => htmlspecialchars($_POST['description']),
-            'state'       => in_array($_POST['state'], ['pendiente', 'en progreso', 'completado']) ? $_POST['state'] : 'pendiente',
+            'state'       => in_array($_POST['state'], ['pending', 'ongoing', 'completed']) ? $_POST['state'] : 'pending',
             'created_by'  => htmlspecialchars($_POST['created_by']),
             'start_time'  => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
             'end_time'    => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,

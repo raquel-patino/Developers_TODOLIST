@@ -72,8 +72,6 @@ public function createTask(array $taskData)
     {
         return file_put_contents($this->filePath, json_encode($this->data, JSON_PRETTY_PRINT))!== false;
     }
-
-
     
     public function updateTask(array $taskData)
     {
@@ -93,6 +91,7 @@ public function createTask(array $taskData)
         }
         return false; // Si no se encontró la tarea
     }  
+    
 public function deleteTask($id){
         $tasksReduced= [];
         foreach ($this->data as $task){
