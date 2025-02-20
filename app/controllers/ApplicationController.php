@@ -71,6 +71,15 @@ function deleteAction(){
         header("Location: " . WEB_ROOT . "/");
         exit(); 
 }
+
+function searchAction(){
+//comprobacion y sanitización de carácteres introducidos
+    if(isset($_GET["search"])){
+        $search= trim($_GET["search"]);
+        $search= htmlspecialchars($search,ENT_QUOTES, 'UTF-8');
+    }
+
+}
 }
 
 ?>
