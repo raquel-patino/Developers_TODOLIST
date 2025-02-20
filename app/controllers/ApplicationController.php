@@ -78,9 +78,9 @@ function searchAction(){
         $search= trim($_GET["search"]);
         $search= htmlspecialchars($search,ENT_QUOTES, 'UTF-8');
     }
-    //eliminar acentos
+    //eliminar acentos ¿si envian un integer o un float como buscará? hacer if
     $searchNoAccents= iconv('UTF-8', 'ASCII//TRANSLIT', $search);
-    
+
 
 }
 }
