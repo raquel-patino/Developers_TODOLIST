@@ -10,9 +10,9 @@
     },
     {
         "id": 2,
-        "title": "Revisar c\u00f3digo",
+        "title": "Otra edicci\u00f3n m\u00e1s",
         "description": "Analizar el c\u00f3digo de la nueva funcionalidad y realizar pruebas.",
-        "state": "on going",
+        "state": "pending",
         "start_time": "2025-12-24T14:00",
         "end_time": "2025-12-24T16:30",
         "created_by": "Raquel"
@@ -27,37 +27,19 @@
         "created_by": "Raquel"
     },
     {
-        "id": 4,
-        "title": "Organizar base de datos",
-        "description": "Eliminar registros duplicados y optimizar consultas SQL.",
-        "state": "completed",
-        "start_time": "2025-12-26T08:30",
-        "end_time": "2025-12-26T11:30",
-        "created_by": "Lena"
-    },
-    {
-        "id": 5,
-        "title": "Dise\u00f1ar nueva interfaz",
-        "description": "Crear prototipos para la actualizaci\u00f3n del panel de usuario.",
-        "state": "on going",
-        "start_time": "2025-12-27T13:00",
-        "end_time": "2025-12-27T17:00",
-        "created_by": "Raquel"
-    },
-    {
         "id": 6,
-        "title": "Otra Prueba",
+        "title": "Edicci\u00f3n",
         "description": "Primera prueba despues de hacer merge de createTask y develop",
-        "state": "pendiente",
+        "state": "pending",
         "created_by": "Lena",
         "start_time": "2025-02-22T12:12",
         "end_time": "2025-02-26T13:13"
     },
     {
         "id": 7,
-        "title": "frqgvq",
-        "description": "vreverqvrev",
-        "state": "pendiente",
+        "title": "Segunda prueba de edicci\u00f3n",
+        "description": "Probando el mensaje de confirmaci\u00f3n",
+        "state": "ongoing",
         "created_by": "Lena",
         "start_time": "2025-02-20T12:12",
         "end_time": "2025-02-28T13:13"

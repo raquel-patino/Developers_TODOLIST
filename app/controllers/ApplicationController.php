@@ -83,6 +83,8 @@ function updateTaskAction()
         ];
 
         if ($this->taskModel->updateTask($taskData)) {
+            // ✅ Guardar datos de la tarea en sesión para mostrar el popup
+            $_SESSION['popup_data'] = $taskData;
             header('Location: ' . WEB_ROOT . '/');
             exit();
         } else {
@@ -90,6 +92,7 @@ function updateTaskAction()
         }
     }
 }
+
 
 function deleteAction(){
     //comprobaciones de seguridad
