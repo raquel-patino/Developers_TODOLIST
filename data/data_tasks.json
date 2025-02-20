@@ -1,12 +1,12 @@
 [
     {
-        "id": 1,
-        "title": "",
-        "description": "",
-        "state": "pendiente",
-        "start_time": null,
-        "end_time": null,
-        "created_by": ""
+        "id": 8,
+        "title": "Nueva tarea de prueba",
+        "description": "Con todas las funcionalidades ok.",
+        "state": "pending",
+        "created_by": "Lena ",
+        "start_time": "2025-02-20T12:12",
+        "end_time": "2025-02-20T13:13"
     },
     {
         "id": 2,
@@ -43,14 +43,5 @@
         "created_by": "Lena",
         "start_time": "2025-02-20T12:12",
         "end_time": "2025-02-28T13:13"
-    },
-    {
-        "id": 8,
-        "title": "wrgqrwgvd",
-        "description": "WVCdsfc",
-        "state": "pendiente",
-        "created_by": "Lena",
-        "start_time": "2025-02-01T12:12",
-        "end_time": "2025-02-27T12:12"
     }
 ]
