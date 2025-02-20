@@ -73,16 +73,27 @@ function deleteAction(){
 }
 
 function searchAction(){
-//comprobacion y sanitización de carácteres introducidos
-    if(isset($_GET["search"])){
-        $search= trim($_GET["search"]);
-        $search= htmlspecialchars($search,ENT_QUOTES, 'UTF-8');
+    //comprobacion y sanitización de carácteres introducidos
+        if(isset($_GET["search"])){
+            $search= trim($_GET["search"]);
+            $search= htmlspecialchars($search,ENT_QUOTES, 'UTF-8');
+        }
+     
+        $searchModified= iconv('UTF-8', 'ASCII//TRANSLIT', $search);
+        $searchNoAccents = str_replace(["'", "`", "^", "~"], "", $searchModified);
+        $this->taskModel->searchTask($searchNoAccents);
+    
+        if (count($this->taskModel->searchTask($searchNoAccents)) > 0){
+            $this->view->tasks= $this->taskModel->searchTask($searchNoAccents);
+    
+        }else{
+            $_SESSION["error"]= "No se ha encontrado ninguna tarea con este título";
+            header("Location: " . WEB_ROOT . "/");
+            exit(); 
+        }
+    
+    
     }
-    //eliminar acentos ¿si envian un integer o un float como buscará? hacer if
-    $searchNoAccents= iconv('UTF-8', 'ASCII//TRANSLIT', $search);
-
-
-}
 }
 
 ?>

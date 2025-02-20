@@ -75,18 +75,19 @@ public function deleteTask($id){
     
     }
 
-public function searchTask($taskSearched){
-    $tasks=$this->fetchAll();
-    $tasksFound= [];
-
-    foreach ($tasks as $task){
-        $titleNoAccents= iconv('UTF-8', 'ASCII//TRANSLIT', $task["title"]); //convierto para eliminar acentos 
-        if (stripos($titleNoAccents, $taskSearched) !== false){
-            $tasksFound[]=$task;
-        }
+    public function searchTask($taskSearched){
+        $tasksFound = [];
+        
+        foreach ($this->data as $task){
+            $titleModified= iconv('UTF-8', 'ASCII//TRANSLIT', $task["title"]); //convierto para eliminar acentos 
+            $titleNoAccents = str_replace(["'", "`", "^", "~"], "", $titleModified);
+            if (stripos($titleNoAccents, $taskSearched) !== false){
+                $tasksFound[]=$task;
+            }
+        } 
+        return $tasksFound;
+    
     }
-
-}
 
 }
 
