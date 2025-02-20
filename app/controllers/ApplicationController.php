@@ -53,6 +53,47 @@ function createTaskAction()
     }
 }
 
+function editTaskAction()
+{
+    $id = $_POST["id"] ?? null;
+
+    $task = $this->taskModel->fetchTaskById($id);
+
+    if ($task) {
+        $this->view->task = $task;
+    } else {
+        $_SESSION["error"] = "Tarea no encontrada.";
+        header("Location: " . WEB_ROOT . "/");
+        exit();
+    }
+}
+
+
+function updateTaskAction()
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $taskData = [
+            'id'          => htmlspecialchars($_POST['id']),
+            'title'       => htmlspecialchars($_POST['title']),
+            'description' => htmlspecialchars($_POST['description']),
+            'state'       => in_array($_POST['state'], ['pending', 'ongoing', 'completed']) ? $_POST['state'] : 'pending',
+            'created_by'  => htmlspecialchars($_POST['created_by']),
+            'start_time'  => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
+            'end_time'    => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,
+        ];
+
+        if ($this->taskModel->updateTask($taskData)) {
+            // ✅ Guardar datos de la tarea en sesión para mostrar el popup
+            $_SESSION['popup_data'] = $taskData;
+            header('Location: ' . WEB_ROOT . '/');
+            exit();
+        } else {
+            $this->view->error = "No se pudo actualizar la tarea.";
+        }
+    }
+}
+
+
 function deleteAction(){
     //comprobaciones de seguridad
     if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
