@@ -1,17 +1,26 @@
 <?php if (isset($_SESSION['popup_data'])): ?>
-    <div id="popup" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-            <h2 class="text-lg font-bold text-gray-800 mb-4">Success 🎉</h2>
-            <p class="text-gray-600 mb-2">Task updated successfully!</p>
-            <ul class="text-sm text-gray-700">
-                <li><strong>Title:</strong> <?= htmlspecialchars($_SESSION['popup_data']['title']); ?></li>
-                <li><strong>Description:</strong> <?= htmlspecialchars($_SESSION['popup_data']['description']); ?></li>
-                <li><strong>State:</strong> <?= ucfirst($_SESSION['popup_data']['state']); ?></li>
-                <li><strong>Start Time:</strong> <?= $_SESSION['popup_data']['start_time']; ?></li>
-                <li><strong>End Time:</strong> <?= $_SESSION['popup_data']['end_time']; ?></li>
-                <li><strong>Created by:</strong> <?= htmlspecialchars($_SESSION['popup_data']['created_by']); ?></li>
-            </ul>
-            <button onclick="closePopup()" class="mt-4 w-full bg-teal-500 text-white py-2 rounded-lg">OK</button>
+    <div id="popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                Task Updated Successfully!
+            </h2>
+            <div class="bg-teal-100 p-4 rounded-lg">
+                <ul class="text-sm text-gray-700 space-y-2">
+                    <li><strong>Title:</strong> <?= htmlspecialchars($_SESSION['popup_data']['title']); ?></li>
+                    <li><strong>Description:</strong> <?= htmlspecialchars($_SESSION['popup_data']['description']); ?></li>
+                    <li><strong>State:</strong> 
+                        <span class="px-2 py-1 rounded-full text-white text-xs font-bold
+                            <?= $_SESSION['popup_data']['state'] === 'pending' ? 'bg-orange-500' : 
+                                ($_SESSION['popup_data']['state'] === 'ongoing' ? 'bg-green-500' : 'bg-red-500'); ?>">
+                            <?= ucfirst($_SESSION['popup_data']['state']); ?>
+                        </span>
+                    </li>
+                    <li><strong>Start Time:</strong> <?= $_SESSION['popup_data']['start_time']; ?></li>
+                    <li><strong>End Time:</strong> <?= $_SESSION['popup_data']['end_time']; ?></li>
+                    <li><strong>Created by:</strong> <?= htmlspecialchars($_SESSION['popup_data']['created_by']); ?></li>
+                </ul>
+            </div>
+            <button onclick="closePopup()" class="mt-4 w-full bg-teal-500 text-white py-2 rounded-lg hover:bg-teal-600">OK</button>
         </div>
     </div>
     <script>
