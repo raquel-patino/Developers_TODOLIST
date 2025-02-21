@@ -1,30 +1,12 @@
 [
     {
-        "id": 8,
-        "title": "Nueva tarea de prueba",
-        "description": "Con todas las funcionalidades ok.",
-        "state": "pending",
-        "created_by": "Lena ",
-        "start_time": "2025-02-20T12:12",
-        "end_time": "2025-02-20T13:13"
-    },
-    {
-        "id": 2,
-        "title": "Otra edicci\u00f3n m\u00e1s",
-        "description": "Analizar el c\u00f3digo de la nueva funcionalidad y realizar pruebas.",
-        "state": "pending",
-        "start_time": "2025-12-24T14:00",
-        "end_time": "2025-12-24T16:30",
-        "created_by": "Raquel"
-    },
-    {
         "id": 3,
         "title": "Prueba de edicci\u00f3n de tarea",
         "description": "A\u00f1adir detalles sobre la \u00faltima actualizaci\u00f3n del sistema.",
-        "state": "ongoing",
-        "start_time": "2025-12-25T10:00",
-        "end_time": "2025-12-25T12:00",
-        "created_by": "Raquel"
+        "state": "pending",
+        "start_time": "2025-12-25T13:00",
+        "end_time": "2025-12-25T13:00",
+        "created_by": "Lena"
     },
     {
         "id": 6,

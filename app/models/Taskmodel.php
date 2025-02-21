@@ -1,16 +1,14 @@
 <?php
 
-class Taskmodel{
+class Taskmodel {
 
 protected $filePath= "";
 protected $data= [];
 
 function __construct($file)
 {
-    
     $this->filePath= ROOT_PATH . '/data/'. $file;
     $this->loadData();
-
 }
 
 protected function loadData()
@@ -28,8 +26,7 @@ protected function loadData()
 }
 
 public function fetchAll()
-    {
-       
+    { 
         return $this->data;
     }
 
@@ -37,13 +34,13 @@ public function fetchAll()
     {
         foreach ($this->data as $task) {
             if ($task['id'] == $id) {
-                return $task; // Devuelve la tarea encontrada
+                return $task;
             }
         }
-        return null; // Devuelve null si no se encuentra la tarea
+        return null;
     }
 
-public function createTask(array $taskData) 
+    public function createTask(array $taskData) 
     {
         $newTask = [
             'id' => $this->generateId(),
@@ -54,11 +51,8 @@ public function createTask(array $taskData)
             'start_time' => $taskData['start_time'],
             'end_time' => $taskData['end_time'],
         ];       
-
         array_unshift($this->data,$newTask);
-        
-        $this->saveData();
-
+        $this->saveData(); //eliminar?
         return $this->saveData();
     }
     
@@ -77,19 +71,16 @@ public function createTask(array $taskData)
     {
         foreach ($this->data as &$task) {
             if ($task['id'] == $taskData['id']) {
-                // Actualizar los datos de la tarea en el array interno
                 $task['title']       = $taskData['title'];
                 $task['description'] = $taskData['description'];
                 $task['state']       = $taskData['state'];
                 $task['created_by']  = $taskData['created_by'];
                 $task['start_time']  = $taskData['start_time'];
                 $task['end_time']    = $taskData['end_time'];
-    
-                // Guardar los cambios en el JSON y devolver el resultado de saveData()
                 return $this->saveData();
             }
         }
-        return false; // Si no se encontró la tarea
+        return false;
     }  
     
 public function deleteTask($id){
