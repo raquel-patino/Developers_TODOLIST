@@ -18,9 +18,12 @@
         <div class="bg-red-200 text-red-800 p-4 rounded-lg mb-4">
             <?= $_SESSION["error"]; ?>
         </div>
- <?php unset($_SESSION["error"]);?>
- 
+ <?php unset($_SESSION["error"]);?> 
         <?php endif; ?>
+        <?php if (isset($_SESSION['popup_data'])): ?>
+    <?php include 'updateTask.phtml'; ?>
+<?php endif; ?>
+
         <!-- Botón para agregar tarea -->
         <div class="flex justify-between items-center mb-4">
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
@@ -45,10 +48,16 @@
                                 ?>">
                                 <?= ucfirst($task['state']) ?>
                             </span>
-                            <form action="<?= WEB_ROOT?>/delete" method="POST">
-                            <button class= "bg-green-500 text-white rounded-lg p-2" type="submit"> Delete</button>
-                            <input type= "hidden" name="id" value="<?= $task["id"]?>">
+                            <div class="flex flex-col space-y-2">
+                            <form action="<?php echo WEB_ROOT; ?>/editTask" method="POST" class="inline">
+                            <input type="hidden" name="id" value="<?= $task['id']; ?>">
+                            <button type="submit" class="bg-green-500 text-white rounded-lg px-4 py-2 w-full">Edit</button>
                             </form>
+                            <form action="<?= WEB_ROOT?>/delete" method="post">
+                            <button class="bg-red-500 text-white rounded-lg px-4 py-2 w-full" type="submit">Delete</button>
+                            <input type="hidden" name="id" value="<?= $task["id"]?>">
+                            </form> 
+                            </div>
                         </div>
                         <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['title']) ?></h2>
                         <p class="text-gray-600 text-sm"><?= htmlspecialchars($task['description']) ?></p>
