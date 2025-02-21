@@ -37,7 +37,7 @@ function createTaskAction()
         $taskData = [
             'title' => htmlspecialchars($_POST['title']),
             'description' => htmlspecialchars($_POST['description']),
-            'state' => in_array($_POST['state'], ['pending', 'ongoing', 'completed']) ? $_POST['state'] : 'pending',
+            'state' => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
             'created_by' => htmlspecialchars($_POST['created_by']),
             'start_time' => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
             'end_time' => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,
@@ -76,7 +76,7 @@ function updateTaskAction()
             'id'          => htmlspecialchars($_POST['id']),
             'title'       => htmlspecialchars($_POST['title']),
             'description' => htmlspecialchars($_POST['description']),
-            'state'       => in_array($_POST['state'], ['pending', 'ongoing', 'completed']) ? $_POST['state'] : 'pending',
+            'state'       => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
             'created_by'  => htmlspecialchars($_POST['created_by']),
             'start_time'  => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
             'end_time'    => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,

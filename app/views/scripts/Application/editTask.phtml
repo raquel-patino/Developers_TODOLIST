@@ -7,15 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-8">
-
-    <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Edit Task</h1>
+    <div class="max-w-3xl mx-auto bg-[#9EF8EE] p-6 rounded-lg shadow-2xl">
+        <h1 class="text-2xl font-bold text-gray-700 mb-4 text-center">Edit Task</h1>
 
     <form action="<?php echo WEB_ROOT; ?>/updateTask" method="POST" class="space-y-4">
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($this->task['id']); ?>">
 
             <div>
-                <label for="title" class="block text-sm font-medium text-gray-700">Task's Title</label>
+                <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
                 <input type="text" id="title" name="title" required 
                        value="<?php echo htmlspecialchars($this->task['title']); ?>"
                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
@@ -27,7 +26,7 @@
                         class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
                     <option value="pending" <?php echo $this->task['state'] == 'pending' ? 'selected' : ''; ?>>Pending</option>
                     <option value="ongoing" <?php echo $this->task['state'] == 'ongoing' ? 'selected' : ''; ?>>Ongoing</option>
-                    <option value="ended" <?php echo $this->task['state'] == 'ended' ? 'selected' : ''; ?>>Ended</option>
+                    <option value="ended" <?php echo $this->task['state'] == 'Ended' ? 'selected' : ''; ?>>Ended</option>
                 </select>
             </div>
 
@@ -60,11 +59,11 @@
 
             <div class="mt-4 flex justify-between">
                 <button type="button" onclick="history.back()" 
-                        class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-gray-500 transition duration-300 mr-2">
+                        class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-[#C83804] transition duration-300 mr-2">
                     Cancel
                 </button>
                 <button type="submit" 
-                        class="w-1/2 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300">
+                        class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-[#348888] transition duration-300">
                     Save Changes
                 </button>
             </div>
