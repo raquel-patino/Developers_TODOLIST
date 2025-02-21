@@ -1,12 +1,12 @@
 [
     {
-        "id": 3,
-        "title": "Prueba de edicci\u00f3n de tarea",
-        "description": "A\u00f1adir detalles sobre la \u00faltima actualizaci\u00f3n del sistema.",
-        "state": "pending",
-        "start_time": "2025-12-25T13:00",
-        "end_time": "2025-12-25T13:00",
-        "created_by": "Lena"
+        "id": 8,
+        "title": "Refactorizar",
+        "description": "Probando los filtros",
+        "state": "ongoing",
+        "created_by": "Lena",
+        "start_time": null,
+        "end_time": null
     },
     {
         "id": 6,

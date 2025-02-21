@@ -34,24 +34,35 @@ function showDataAction(){
     function createTaskAction() 
     { 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Validación y sanitización de datos
             $taskData = [
-                'title' => htmlspecialchars($_POST['title']),
-                'description' => htmlspecialchars($_POST['description']),
+                'title' => filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING),
+                'description' => filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING),
                 'state' => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
-                'created_by' => htmlspecialchars($_POST['created_by']),
-                'start_time' => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
-                'end_time' => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,
+                'created_by' => filter_input(INPUT_POST, 'created_by', FILTER_SANITIZE_STRING),
+                'start_time' => $this->validateDate($_POST['start_time']) ? $_POST['start_time'] : null,
+                'end_time' => $this->validateDate($_POST['end_time']) ? $_POST['end_time'] : null,
             ];
 
+            // Crear la tarea
             if ($this->taskModel->createTask($taskData)) {
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
+                // Manejo de errores más robusto
                 $this->view->error = "No se pudo crear la tarea.";
                 exit();
             }
         }
     }
+
+    // Método para validar formato de fecha
+    private function validateDate($date, $format = 'Y-m-d H:i:s')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) === $date;
+    }
+
 
     function editTaskAction()
     {
