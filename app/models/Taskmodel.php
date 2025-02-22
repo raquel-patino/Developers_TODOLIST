@@ -52,7 +52,6 @@ public function fetchAll()
             'end_time' => $taskData['end_time'],
         ];       
         array_unshift($this->data,$newTask);
-        $this->saveData(); //eliminar?
         return $this->saveData();
     }
     

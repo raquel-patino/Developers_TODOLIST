@@ -65,10 +65,8 @@ function showDataAction(){
         if (empty($date)) {
             return null;
         }
-
         $date = str_replace('T', ' ', $date);
         $timestamp = strtotime($date);
-    
         if ($timestamp === false) {
             return null;
         }
