@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,9 @@
         <form action="<?= WEB_ROOT?>/createTask" method="POST" class="space-y-4">
             <div>
                 <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                <input type="text" id="title" name="title" required 
+                <input type="text" id="title" name="title" required maxlength="50"
                        placeholder="Enter the task title"
+                       title="Maximum 50 characters allowed"
                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
 
@@ -31,8 +32,9 @@
 
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                <textarea id="description" name="description" required 
+                <textarea id="description" name="description" required maxlength="500"
                           placeholder="Describe the task in detail"
+                          title="Maximum 500 characters allowed"
                           class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
             </div>
 
@@ -50,7 +52,7 @@
 
             <div>
                 <label for="created_by" class="block text-sm font-medium text-gray-700">Created by</label>
-                <input type="text" id="created_by" name="created_by" required 
+                <input type="text" id="created_by" name="created_by" required maxlength="30"
                        placeholder="Enter your name"
                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
