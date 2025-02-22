@@ -31,36 +31,46 @@ function showDataAction(){
     $this->view->tasks= $tasks;
 }
 
-    function createTaskAction() 
-    { 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Validación y sanitización de datos
-            $taskData = [
-                'title' => filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING),
-                'description' => filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING),
-                'state' => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
-                'created_by' => filter_input(INPUT_POST, 'created_by', FILTER_SANITIZE_STRING),
-                'start_time' => $this->validateDate($_POST['start_time']) ? $_POST['start_time'] : null,
-                'end_time' => $this->validateDate($_POST['end_time']) ? $_POST['end_time'] : null,
-            ];
+function createTaskAction() 
+{ 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $taskData = [
+            'title' => htmlspecialchars($_POST['title']),
+            'description' => htmlspecialchars($_POST['description']),
+            'state' => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
+            'created_by' => htmlspecialchars($_POST['created_by']),
+            'start_time' => $this->sanitizeDate($_POST['start_time']),
+            'end_time' => $this->sanitizeDate($_POST['end_time']),
+        ];
 
-            // Crear la tarea
-            if ($this->taskModel->createTask($taskData)) {
-                header('Location: ' . WEB_ROOT . '/');
-                exit();
-            } else {
-                // Manejo de errores más robusto
-                $this->view->error = "No se pudo crear la tarea.";
-                exit();
-            }
+        if ($this->taskModel->createTask($taskData)) {
+            header('Location: ' . WEB_ROOT . '/');
+            exit();
+        } else {
+            $this->view->error = "No se pudo crear la tarea.";
+            exit();
         }
     }
+}
+
 
     // Método para validar formato de fecha
-    private function validateDate($date, $format = 'Y-m-d H:i:s')
+    private function sanitizeDate($date)
     {
-        $d = DateTime::createFromFormat($format, $date);
-        return $d && $d->format($format) === $date;
+        if (empty($date)) {
+            return null;
+        }
+    
+        // Reemplazar la "T" con un espacio para que strtotime la reconozca bien
+        $date = str_replace('T', ' ', $date);
+    
+        // Intenta convertir la fecha con strtotime
+        $timestamp = strtotime($date);
+        if ($timestamp === false) {
+            return null; // Fecha inválida
+        }
+    
+        return date('Y-m-d H:i', $timestamp); // Formatear la fecha correctamente
     }
 
 
