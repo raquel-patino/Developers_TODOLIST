@@ -72,7 +72,7 @@ function showDataAction(){
         if ($timestamp === false) {
             return null;
         }
-        return date('Y-m-d H:i', $timestamp);
+        return date('d-m-Y H:i', $timestamp);
     }
 
     function editTaskAction()
