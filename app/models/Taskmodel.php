@@ -52,7 +52,6 @@ public function fetchAll()
             'end_time' => $taskData['end_time'],
         ];       
         array_unshift($this->data,$newTask);
-        $this->saveData(); //eliminar?
         return $this->saveData();
     }
     
@@ -95,6 +94,19 @@ public function deleteTask($id){
     
     }
 
+    public function searchTask($taskSearched){
+        $tasksFound = [];
+        
+        foreach ($this->data as $task){
+            $titleModified= iconv('UTF-8', 'ASCII//TRANSLIT', $task["title"]); //convierto para eliminar acentos 
+            $titleNoAccents = str_replace(["'", "`", "^", "~"], "", $titleModified);
+            if (stripos($titleNoAccents, $taskSearched) !== false){
+                $tasksFound[]=$task;
+            }
+        } 
+        return $tasksFound;
+    
+    }
 
 }
 

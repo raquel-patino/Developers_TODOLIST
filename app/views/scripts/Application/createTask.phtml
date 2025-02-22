@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-8">
-    <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Create a New Task</h1>
+    <div class="max-w-3xl mx-auto bg-[#9EF8EE] p-6 rounded-lg shadow-2xl">
+        <h1 class="text-2xl font-bold text-gray-700 mb-4 text-center">New Task</h1>
 
         <form action="<?= WEB_ROOT?>/createTask" method="POST" class="space-y-4">
             <div>
-                <label for="title" class="block text-sm font-medium text-gray-700">Task's Title</label>
-                <input type="text" id="title" name="title" required 
+                <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                <input type="text" id="title" name="title" required maxlength="50"
                        placeholder="Enter the task title"
+                       title="Maximum 50 characters allowed"
                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
 
@@ -31,8 +32,9 @@
 
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                <textarea id="description" name="description" required 
+                <textarea id="description" name="description" required maxlength="500"
                           placeholder="Describe the task in detail"
+                          title="Maximum 500 characters allowed"
                           class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
             </div>
 
@@ -50,18 +52,18 @@
 
             <div>
                 <label for="created_by" class="block text-sm font-medium text-gray-700">Created by</label>
-                <input type="text" id="created_by" name="created_by" required 
+                <input type="text" id="created_by" name="created_by" required maxlength="30"
                        placeholder="Enter your name"
                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
 
             <div class="mt-4 flex justify-between">
                 <button type="button" onclick="history.back()" 
-                        class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-gray-500 transition duration-300 mr-2">
+                    class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-[#C83804] transition duration-300 mr-2">
                     Cancel
                 </button>
                 <button type="submit" 
-                        class="w-1/2 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300">
+                    class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-[#348888] transition duration-300 mr-2">
                     Create Task
                 </button>
             </div>
