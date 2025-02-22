@@ -1,12 +1,93 @@
 [
     {
-        "id": 3,
-        "title": "Prueba de edicci\u00f3n de tarea",
-        "description": "A\u00f1adir detalles sobre la \u00faltima actualizaci\u00f3n del sistema.",
+        "id": 17,
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mollis, tellus accumsan blandit varius, velit arcu maximus nulla, vitae porttitor purus lectus vel velit. Nulla accumsan tortor sit amet nibh sollicitudin consectetur. Cras quis interdum nibh. Phasellus varius efficitur posuere. Maecenas suscipit sem ut nulla egestas, quis viverra urna posuere. Phasellus scelerisque libero consectetur convallis luctus. Mauris aliquet, nulla nec sodales ultrices, nulla nulla euismod est, eu ornare d",
+        "state": "ongoing",
+        "created_by": "Lorem ipsum dolor sit amet",
+        "start_time": "2025-02-24 12:12",
+        "end_time": "2025-02-27 12:12"
+    },
+    {
+        "id": 16,
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum mauris et venenatis con",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mollis, tellus accumsan blandit varius, velit arcu maximus nulla, vitae porttitor purus lectus vel velit. Nulla accumsan tortor sit amet nibh sollicitudin consectetur. Cras quis interdum nibh. Phasellus varius efficitur posuere. Maecenas suscipit sem ut nulla egestas, quis viverra urna posuere. Phasellus scelerisque libero consectetur convallis luctus. Mauris aliquet, nulla nec sodales ultrices, nulla nulla euismod est, eu ornare d",
         "state": "pending",
-        "start_time": "2025-12-25T13:00",
-        "end_time": "2025-12-25T13:00",
-        "created_by": "Lena"
+        "created_by": "Lorem ipsum dolor sit amet, co",
+        "start_time": "2025-02-23 12:12",
+        "end_time": "2025-02-25 12:12"
+    },
+    {
+        "id": 15,
+        "title": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Ac",
+        "description": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Ac",
+        "state": "ongoing",
+        "created_by": "chmod 666 \/Applications\/XAMPP\/",
+        "start_time": "2025-02-23 12:12",
+        "end_time": "2025-02-23 12:12"
+    },
+    {
+        "id": 14,
+        "title": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.jsonplic",
+        "description": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json",
+        "state": "ongoing",
+        "created_by": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Ac",
+        "start_time": "2025-02-23 12:12",
+        "end_time": "2025-03-01 12:12"
+    },
+    {
+        "id": 13,
+        "title": "Otra prueba de fechas m\u00e1s",
+        "description": "rvewrvew",
+        "state": "pending",
+        "created_by": "Lena",
+        "start_time": "2025-02-12 12:12",
+        "end_time": "2025-03-09 12:12"
+    },
+    {
+        "id": 12,
+        "title": "Otra prueba de fechas",
+        "description": "revebvbvf",
+        "state": "pending",
+        "created_by": "Lena",
+        "start_time": "2025-02-24 12:12",
+        "end_time": "2025-02-27 12:12"
+    },
+    {
+        "id": 11,
+        "title": "Prueba de fechas",
+        "description": "recqdx",
+        "state": "ongoing",
+        "created_by": "Lena",
+        "start_time": "2025-02-23 12:12",
+        "end_time": "2025-02-28 12:12"
+    },
+    {
+        "id": 10,
+        "title": "evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,",
+        "description": "Pruebas de filtrado",
+        "state": "ongoing",
+        "created_by": "evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,",
+        "start_time": null,
+        "end_time": null
+    },
+    {
+        "id": 9,
+        "title": "Pruebas de filtrado",
+        "description": "evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,evqiuvbchjnkmnbvgcfxcgvhbjnkml,mknjbhvgcfxcgvhbjnkml,\u00f1.,lmknjbhvgcfxdcfvgbhjnkml,",
+        "state": "pending",
+        "created_by": "Lena",
+        "start_time": "2025-02-25T12:12",
+        "end_time": "2025-02-28T12:12"
+    },
+    {
+        "id": 8,
+        "title": "Refactorizar",
+        "description": "Probando los filtros",
+        "state": "ongoing",
+        "created_by": "Lena",
+        "start_time": "2025-02-28T12:12",
+        "end_time": "2025-03-09T13:13"
     },
     {
         "id": 6,

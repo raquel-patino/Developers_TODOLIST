@@ -35,12 +35,12 @@ function showDataAction(){
     { 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $taskData = [
-                'title' => htmlspecialchars($_POST['title']),
-                'description' => htmlspecialchars($_POST['description']),
+                'title' => $this->sanitizeText($_POST['title'], 50),
+                'description' => $this->sanitizeText($_POST['description'], 500),
                 'state' => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
-                'created_by' => htmlspecialchars($_POST['created_by']),
-                'start_time' => strtotime($_POST['start_time']) ? $_POST['start_time'] : null,
-                'end_time' => strtotime($_POST['end_time']) ? $_POST['end_time'] : null,
+                'created_by' => $this->sanitizeText($_POST['created_by'], 30),
+                'start_time' => $this->sanitizeDate($_POST['start_time']),
+                'end_time' => $this->sanitizeDate($_POST['end_time']),
             ];
 
             if ($this->taskModel->createTask($taskData)) {
@@ -51,6 +51,26 @@ function showDataAction(){
                 exit();
             }
         }
+    }
+
+    private function sanitizeText($text, $maxLength)
+    {
+        $text = trim($text);
+        $text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+        return mb_substr($text, 0, $maxLength);
+    }
+
+    private function sanitizeDate($date)
+    {
+        if (empty($date)) {
+            return null;
+        }
+        $date = str_replace('T', ' ', $date);
+        $timestamp = strtotime($date);
+        if ($timestamp === false) {
+            return null;
+        }
+        return date('d-m-Y H:i', $timestamp);
     }
 
     function editTaskAction()
