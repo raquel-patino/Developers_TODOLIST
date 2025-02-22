@@ -35,20 +35,55 @@ function showDataAction(){
     { 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $taskData = [
-                'title' => $this->sanitizeText($_POST['title'], 50),
+                'title'       => $this->sanitizeText($_POST['title'], 50),
                 'description' => $this->sanitizeText($_POST['description'], 500),
-                'state' => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
-                'created_by' => $this->sanitizeText($_POST['created_by'], 30),
-                'start_time' => $this->sanitizeDate($_POST['start_time']),
-                'end_time' => $this->sanitizeDate($_POST['end_time']),
+                'state'       => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
+                'created_by'  => $this->sanitizeText($_POST['created_by'], 30),
+                'start_time'  => $this->sanitizeDate($_POST['start_time']),
+                'end_time'    => $this->sanitizeDate($_POST['end_time']),
             ];
-
             if ($this->taskModel->createTask($taskData)) {
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
                 $this->view->error = "No se pudo crear la tarea.";
                 exit();
+            }
+        }
+    }
+
+    function editTaskAction()
+    {
+        $id = $_POST["id"] ?? null;
+        $task = $this->taskModel->fetchTaskById($id);
+
+        if ($task) {
+            $this->view->task = $task;
+        } else {
+            $_SESSION["error"] = "Tarea no encontrada.";
+            header("Location: " . WEB_ROOT . "/");
+            exit();
+        }
+    }
+
+    function updateTaskAction()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $taskData = [
+                'id'          => htmlspecialchars($_POST['id']),
+                'title'       => $this->sanitizeText($_POST['title'], 50),
+                'description' => $this->sanitizeText($_POST['description'], 500),
+                'state'       => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
+                'created_by'  => $this->sanitizeText($_POST['created_by'], 30),
+                'start_time'  => $this->sanitizeDate($_POST['start_time']),
+                'end_time'    => $this->sanitizeDate($_POST['end_time']),
+            ];
+            if ($this->taskModel->updateTask($taskData)) {
+                $_SESSION['popup_data'] = $taskData;
+                header('Location: ' . WEB_ROOT . '/');
+                exit();
+            } else {
+                $this->view->error = "No se pudo actualizar la tarea.";
             }
         }
     }
@@ -72,44 +107,6 @@ function showDataAction(){
         }
         return date('d-m-Y H:i', $timestamp);
     }
-
-    function editTaskAction()
-    {
-        $id = $_POST["id"] ?? null;
-        $task = $this->taskModel->fetchTaskById($id);
-
-        if ($task) {
-            $this->view->task = $task;
-        } else {
-            $_SESSION["error"] = "Tarea no encontrada.";
-            header("Location: " . WEB_ROOT . "/");
-            exit();
-        }
-    }
-
-    function updateTaskAction()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $taskData = [
-                'id'          => htmlspecialchars($_POST['id']), // Aquí puedes decidir si quieres usar sanitizeText también
-                'title'       => $this->sanitizeText($_POST['title'], 50), // Llama a sanitizeText para el título
-                'description' => $this->sanitizeText($_POST['description'], 500), // Llama a sanitizeText para la descripción
-                'state'       => in_array($_POST['state'], ['pending', 'ongoing', 'ended']) ? $_POST['state'] : 'pending',
-                'created_by'  => $this->sanitizeText($_POST['created_by'], 30), // Llama a sanitizeText para el creador
-                'start_time'  => $this->sanitizeDate($_POST['start_time']), // Llama a sanitizeDate para la fecha de inicio
-                'end_time'    => $this->sanitizeDate($_POST['end_time']), // Llama a sanitizeDate para la fecha de finalización
-            ];
-    
-            if ($this->taskModel->updateTask($taskData)) {
-                $_SESSION['popup_data'] = $taskData;
-                header('Location: ' . WEB_ROOT . '/');
-                exit();
-            } else {
-                $this->view->error = "No se pudo actualizar la tarea.";
-            }
-        }
-    }
-    
 
 function deleteAction(){
     //comprobaciones de seguridad
