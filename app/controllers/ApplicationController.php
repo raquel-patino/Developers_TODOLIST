@@ -125,8 +125,6 @@ function showDataAction(){
             exit();
         }
     }
-    
-    
 
 function deleteAction(){
     //comprobaciones de seguridad
