@@ -1,0 +1,29 @@
+<?php if (isset($_SESSION['delete_popup'])): ?>
+    <div id="popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+        <div class="bg-[#F8BBD0] p-6 rounded-lg shadow-2xl max-w-md w-full">
+            <div class="bg-white p-4 rounded-lg shadow-2xl text-center">
+                <p class="text-sm text-gray-700">¿Eliminar la tarea "<strong><?= htmlspecialchars($_SESSION['delete_task_title']) ?></strong>"?</p>
+            </div>
+            <div class="mt-4 flex justify-between">
+                <button onclick="closePopup()" class="w-1/2 bg-gray-400 text-white py-2 rounded-lg hover:bg-[#D81B60] transition duration-300 mr-2">
+                    Cancelar
+                </button>
+                <form action="<?= WEB_ROOT ?>/delete" method="POST" class="w-1/2">
+                    <input type="hidden" name="id" value="<?= $_SESSION['delete_task_id']; ?>">
+                    <button type="submit" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition duration-300">
+                        Confirmar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+    <?php unset($_SESSION['delete_popup']); ?>
+    <?php unset($_SESSION['delete_task_id']); ?> <!-- Asegúrate de limpiar el ID después de usarlo -->
+    <?php unset($_SESSION['delete_task_title']); ?> <!-- Limpia el título de la tarea después de usarlo -->
+<?php endif; ?>
+
