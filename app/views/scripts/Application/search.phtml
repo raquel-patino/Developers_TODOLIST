@@ -8,7 +8,16 @@
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold text-gray-800 mb-4">My To-Do</h1>
+    <div class="relative flex justify-center items-center mb-4">
+        <h1 class="text-center text-3xl bg-gray-100 rounded-lg w-1/2 font-serif font-bold text-gray-800 
+          mx-auto">MY TO-DO</h1>
+         <a href="<?= WEB_ROOT ?>/" class="flex items-center bg-blue-500 text-white rounded-lg px-5 py-1 hover:bg-blue-700 absolute right-4">Home
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="ml-2 size-6">
+        <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+        <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+    </svg>
+    </a>
+    </div>
         <?php if (isset($_SESSION["success"])): ?>
         <div class="bg-green-200 text-green-800 p-4 rounded-lg mb-4">
             <?= $_SESSION["success"]; ?>
@@ -18,17 +27,22 @@
         <div class="bg-red-200 text-red-800 p-4 rounded-lg mb-4">
             <?= $_SESSION["error"]; ?>
         </div>
-     <?php unset($_SESSION["error"]);?>
+ <?php unset($_SESSION["error"]);?> 
         <?php endif; ?>
+<?php if (isset($_SESSION['popup_data'])): ?>
+    <?php include 'updateTask.phtml'; ?>
+<?php endif; ?>
 
         <!-- Botón para agregar tarea -->
         <div class="flex justify-between items-center mb-4">
+        <a href="<?= WEB_ROOT?>/createTask">
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
-                <span class="text-lg"><a href="<?= WEB_ROOT?>/form">➕</a></span>
-                <span class="ml-2">Add New Task</span>
+                <span class="text-lg">➕</span>
+                <span class="ml-2">New Task</span>
                 </button>
-                <form action="<?= WEB_ROOT?>/search" method="get">
-            <input type="text" name= "search" placeholder="Search title..."class="border px-4 py-2 rounded-lg w-3/3">
+        </a>
+            <form action="<?= WEB_ROOT?>/search" method="get">
+                <input type="text" name= "search" placeholder="Search title..."class="border px-4 py-2 rounded-lg w-3/3">
             </form>
         </div>
 
@@ -38,19 +52,25 @@
                 <?php foreach ($this->tasks as $task): ?>
                     <li class="bg-white p-4 rounded-lg shadow flex flex-col">
                         <div class="flex justify-between items-center">
-                            <span class="px-3 py-1 rounded-full text-white text-xs font-bold 
+                            <span class="px-4 py-2 rounded-full text-white text-xs font-bold 
                                 <?php 
                                     echo $task['state'] === 'pending' ? 'bg-orange-500' : 
-                                         ($task['state'] === 'on going' ? 'bg-green-500' : 'bg-red-500'); 
+                                         ($task['state'] === 'ongoing' ? 'bg-green-500' : 'bg-red-500'); 
                                 ?>">
                                 <?= ucfirst($task['state']) ?>
                             </span>
-                            <form action="<?= WEB_ROOT?>/delete" method="post">
-                            <button class= "bg-green-500 text-white rounded-lg p-2" type="submit"> Delete</button>
-                            <input type= "hidden" name="id" value="<?= $task["id"]?>">
+                            <form action="<?php echo WEB_ROOT; ?>/editTask" method="POST" class="inline">
+                                <input type="hidden" name="id" value="<?= $task['id']; ?>">
+                                <button class="bg-[#348888] text-white rounded-lg px-4 py-2 w-20" type="submit">Edit</button>
                             </form>
                         </div>
+                        <div class="flex justify-between items-center">
                         <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['title']) ?></h2>
+                        <form action="<?= WEB_ROOT?>/delete" method="post">
+                            <button class="bg-[#C83804] text-white rounded-lg mt-2 mb-2 px-4 py-2 w-20" type="submit">Delete</button>
+                            <input type="hidden" name="id" value="<?= $task["id"]?>">
+                            </form>
+                        </div>
                         <p class="text-gray-600 text-sm"><?= htmlspecialchars($task['description']) ?></p>
                         <div class="text-gray-500 text-xs mt-2">
                             <span>Start time: <?=($task['start_time']) ?> </span> 

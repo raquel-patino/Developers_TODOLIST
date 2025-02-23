@@ -8,7 +8,8 @@
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold text-gray-800 mb-4">My To-Do</h1>
+        <h1 class="text-center text-3xl bg-gray-100 rounded-lg w-1/2 font-serif font-bold text-gray-800 
+        mb-4 mx-auto">MY TO-DO</h1>
         <?php if (isset($_SESSION["success"])): ?>
         <div class="bg-green-200 text-green-800 p-4 rounded-lg mb-4">
             <?= $_SESSION["success"]; ?>
@@ -26,12 +27,14 @@
 
         <!-- Botón para agregar tarea -->
         <div class="flex justify-between items-center mb-4">
+        <a href="<?= WEB_ROOT?>/createTask">
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
-                <span class="text-lg"><a href="<?= WEB_ROOT?>/createTask">➕</a></span>
-                <span class="ml-2">Add New Task</span>
+                <span class="text-lg">➕</span>
+                <span class="ml-2">New Task</span>
                 </button>
-                <form action="<?= WEB_ROOT?>/search" method="get">
-            <input type="text" name= "search" placeholder="Search title..."class="border px-4 py-2 rounded-lg w-3/3">
+        </a>
+            <form action="<?= WEB_ROOT?>/search" method="get">
+                <input type="text" name= "search" placeholder="Search title..."class="border px-4 py-2 rounded-lg w-3/3">
             </form>
         </div>
 
@@ -41,25 +44,25 @@
                 <?php foreach ($this->tasks as $task): ?>
                     <li class="bg-white p-4 rounded-lg shadow flex flex-col">
                         <div class="flex justify-between items-center">
-                            <span class="px-3 py-1 rounded-full text-white text-xs font-bold 
+                            <span class="px-4 py-2 rounded-full text-white text-xs font-bold 
                                 <?php 
                                     echo $task['state'] === 'pending' ? 'bg-orange-500' : 
                                          ($task['state'] === 'ongoing' ? 'bg-green-500' : 'bg-red-500'); 
                                 ?>">
                                 <?= ucfirst($task['state']) ?>
                             </span>
-                            <div class="flex flex-col space-y-2">
                             <form action="<?php echo WEB_ROOT; ?>/editTask" method="POST" class="inline">
-                            <input type="hidden" name="id" value="<?= $task['id']; ?>">
-                            <button type="submit" class="bg-green-500 text-white rounded-lg px-4 py-2 w-full">Edit</button>
+                                <input type="hidden" name="id" value="<?= $task['id']; ?>">
+                                <button class="bg-[#348888] text-white rounded-lg px-4 py-2 w-20" type="submit">Edit</button>
                             </form>
-                            <form action="<?= WEB_ROOT?>/delete" method="post">
-                            <button class="bg-red-500 text-white rounded-lg px-4 py-2 w-full" type="submit">Delete</button>
-                            <input type="hidden" name="id" value="<?= $task["id"]?>">
-                            </form> 
-                            </div>
                         </div>
+                        <div class="flex justify-between items-center">
                         <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['title']) ?></h2>
+                        <form action="<?= WEB_ROOT?>/delete" method="post">
+                            <button class="bg-[#C83804] text-white rounded-lg mt-2 mb-2 px-4 py-2 w-20" type="submit">Delete</button>
+                            <input type="hidden" name="id" value="<?= $task["id"]?>">
+                            </form>
+                        </div>
                         <p class="text-gray-600 text-sm"><?= htmlspecialchars($task['description']) ?></p>
                         <div class="text-gray-500 text-xs mt-2">
                             <span>Start time: <?=($task['start_time']) ?> </span> 
