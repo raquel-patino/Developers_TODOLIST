@@ -1,30 +1,12 @@
 [
     {
-        "id": 4,
-        "title": "Desarrollar nueva funcionalidad",
-        "description": "Implementar la nueva funcionalidad en la aplicaci\u00f3n web.",
-        "state": "ongoing",
-        "created_by": "Diana",
-        "start_time": "2025-02-22T12:00",
-        "end_time": "2025-03-01T15:00"
-    },
-    {
-        "id": 5,
-        "title": "Revisar el c\u00f3digo",
-        "description": "Hacer una revisi\u00f3n del c\u00f3digo del proyecto actual.",
-        "state": "completed",
-        "created_by": "Edward",
-        "start_time": "2025-02-20T14:00",
-        "end_time": "2025-02-20T15:00"
-    },
-    {
         "id": 6,
         "title": "Enviar bolet\u00edn informativo",
         "description": "Preparar y enviar el bolet\u00edn informativo mensual.",
         "state": "pending",
         "created_by": "Fiona",
-        "start_time": "2025-02-25T10:00",
-        "end_time": "2025-02-25T12:00"
+        "start_time": "25-02-2025 10:00",
+        "end_time": "25-02-2025 12:00"
     },
     {
         "id": 7,
@@ -32,17 +14,17 @@
         "description": "Probando el mensaje de confirmaci\u00f3n",
         "state": "ongoing",
         "created_by": "Gina",
-        "start_time": "2025-02-20T12:12",
-        "end_time": "2025-02-28T13:13"
+        "start_time": "20-02-2025 12:12",
+        "end_time": "28-02-2025 13:13"
     },
     {
         "id": 8,
         "title": "Actualizar la base de datos",
         "description": "Realizar actualizaciones necesarias en la base de datos.",
-        "state": "completed",
+        "state": "pending",
         "created_by": "Henry",
-        "start_time": "2025-02-19T11:00",
-        "end_time": "2025-02-19T12:30"
+        "start_time": "19-02-2025 11:00",
+        "end_time": "19-02-2025 12:30"
     },
     {
         "id": 9,
@@ -50,8 +32,8 @@
         "description": "Crear la presentaci\u00f3n para la reuni\u00f3n con el cliente.",
         "state": "pending",
         "created_by": "Irene",
-        "start_time": "2025-02-23T13:00",
-        "end_time": "2025-02-23T15:00"
+        "start_time": "23-02-2025 13:00",
+        "end_time": "23-02-2025 15:00"
     },
     {
         "id": 10,
@@ -59,8 +41,8 @@
         "description": "Eliminar archivos innecesarios del proyecto.",
         "state": "ongoing",
         "created_by": "Jack",
-        "start_time": "2025-02-22T14:00",
-        "end_time": "2025-02-28T18:00"
+        "start_time": "22-02-2025 14:00",
+        "end_time": "28-02-2025 18:00"
     },
     {
         "id": 11,
@@ -68,8 +50,8 @@
         "description": "Explorar nuevas tecnolog\u00edas que puedan ser \u00fatiles para el proyecto.",
         "state": "pending",
         "created_by": "Karen",
-        "start_time": "2025-02-24T09:00",
-        "end_time": "2025-02-24T17:00"
+        "start_time": "24-02-2025 09:00",
+        "end_time": "24-02-2025 17:00"
     },
     {
         "id": 12,
@@ -77,17 +59,17 @@
         "description": "Organizar la planificaci\u00f3n del pr\u00f3ximo sprint.",
         "state": "ongoing",
         "created_by": "Larry",
-        "start_time": "2025-02-23T09:00",
-        "end_time": "2025-02-23T10:30"
+        "start_time": "23-02-2025 09:00",
+        "end_time": "23-02-2025 10:30"
     },
     {
         "id": 13,
         "title": "Enviar facturas",
         "description": "Preparar y enviar las facturas del mes.",
-        "state": "completed",
+        "state": "pending",
         "created_by": "Mona",
-        "start_time": "2025-02-20T16:00",
-        "end_time": "2025-02-20T17:30"
+        "start_time": "20-02-2025 16:00",
+        "end_time": "20-02-2025 17:30"
     },
     {
         "id": 14,
@@ -95,7 +77,7 @@
         "description": "Planificar y organizar un evento de integraci\u00f3n para el equipo.",
         "state": "pending",
         "created_by": "Nina",
-        "start_time": "2025-02-28T09:00",
-        "end_time": "2025-03-01T12:00"
+        "start_time": "28-02-2025 09:00",
+        "end_time": "01-03-2025 12:00"
     }
 ]
