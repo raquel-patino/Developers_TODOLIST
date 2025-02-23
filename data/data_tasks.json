@@ -1,23 +1,5 @@
 [
     {
-        "id": 2,
-        "title": "Reuni\u00f3n de equipo",
-        "description": "Asistir a la reuni\u00f3n semanal del equipo.",
-        "state": "ongoing",
-        "created_by": "Bob",
-        "start_time": "2025-02-22T10:00",
-        "end_time": "2025-02-22T11:00"
-    },
-    {
-        "id": 3,
-        "title": "Estudio de mercado",
-        "description": "Realizar un an\u00e1lisis del mercado para el nuevo producto.",
-        "state": "pending",
-        "created_by": "Charlie",
-        "start_time": "2025-02-23T08:00",
-        "end_time": "2025-02-26T16:00"
-    },
-    {
         "id": 4,
         "title": "Desarrollar nueva funcionalidad",
         "description": "Implementar la nueva funcionalidad en la aplicaci\u00f3n web.",
