@@ -15,7 +15,7 @@
 
             <div>
                 <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                <input type="text" id="title" name="title" required 
+                <input type="text" id="title" name="title" required maxlength="50" 
                        value="<?php echo htmlspecialchars($this->task['title']); ?>"
                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
@@ -32,7 +32,7 @@
 
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                <textarea id="description" name="description" required 
+                <textarea id="description" name="description" required maxlength="500" 
                           class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"><?php echo htmlspecialchars($this->task['description']); ?></textarea>
             </div>
 
@@ -52,7 +52,7 @@
 
             <div>
                 <label for="created_by" class="block text-sm font-medium text-gray-700">Created by</label>
-                <input type="text" id="created_by" name="created_by" required 
+                <input type="text" id="created_by" name="created_by" required maxlength="30" 
                        value="<?php echo htmlspecialchars($this->task['created_by']); ?>"
                        class="mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
