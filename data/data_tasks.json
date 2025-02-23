@@ -1,14 +1,5 @@
 [
     {
-        "id": 6,
-        "title": "Enviar bolet\u00edn informativo",
-        "description": "Preparar y enviar el bolet\u00edn informativo mensual.",
-        "state": "pending",
-        "created_by": "Fiona",
-        "start_time": "25-02-2025 10:00",
-        "end_time": "25-02-2025 12:00"
-    },
-    {
         "id": 7,
         "title": "Segunda prueba de edici\u00f3n",
         "description": "Probando el mensaje de confirmaci\u00f3n",
@@ -61,15 +52,6 @@
         "created_by": "Larry",
         "start_time": "23-02-2025 09:00",
         "end_time": "23-02-2025 10:30"
-    },
-    {
-        "id": 13,
-        "title": "Enviar facturas",
-        "description": "Preparar y enviar las facturas del mes.",
-        "state": "pending",
-        "created_by": "Mona",
-        "start_time": "20-02-2025 16:00",
-        "end_time": "20-02-2025 17:30"
     },
     {
         "id": 14,
