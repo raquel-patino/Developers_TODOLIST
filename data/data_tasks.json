@@ -1,47 +1,119 @@
 [
-    {
-        "id": 8,
-        "title": "Actualizar la base de datos",
-        "description": "Realizar actualizaciones necesarias en la base de datos.",
-        "state": "pending",
-        "created_by": "Henry",
-        "start_time": "19-02-2025 11:00",
-        "end_time": "19-02-2025 12:30"
-    },
-    {
-        "id": 10,
-        "title": "Limpieza de proyecto",
-        "description": "Eliminar archivos innecesarios del proyecto.",
-        "state": "ongoing",
-        "created_by": "Jack",
-        "start_time": "22-02-2025 14:00",
-        "end_time": "28-02-2025 18:00"
-    },
-    {
-        "id": 11,
-        "title": "Investigar nuevas tecnolog\u00edas",
-        "description": "Explorar nuevas tecnolog\u00edas que puedan ser \u00fatiles para el proyecto.",
-        "state": "pending",
-        "created_by": "Karen",
-        "start_time": "24-02-2025 09:00",
-        "end_time": "24-02-2025 17:00"
-    },
-    {
-        "id": 12,
-        "title": "Planificaci\u00f3n de sprint",
-        "description": "Organizar la planificaci\u00f3n del pr\u00f3ximo sprint.",
-        "state": "ongoing",
-        "created_by": "Larry",
-        "start_time": "23-02-2025 09:00",
-        "end_time": "23-02-2025 10:30"
-    },
-    {
-        "id": 14,
-        "title": "Organizar evento de equipo",
-        "description": "Planificar y organizar un evento de integraci\u00f3n para el equipo.",
-        "state": "pending",
-        "created_by": "Nina",
-        "start_time": "28-02-2025 09:00",
-        "end_time": "01-03-2025 12:00"
-    }
+        {
+            "id": 1,
+            "title": "Comprar ingredientes",
+            "description": "Comprar harina, levadura y tomate para la pizza.",
+            "state": "pending",
+            "start_time": "2025-02-20 10:00",
+            "end_time": "2025-02-20 12:00",
+            "created_by": "Juan"
+        },
+        {
+            "id": 2,
+            "title": "Hornear pizza",
+            "description": "Preparar y hornear la pizza margarita.",
+            "state": "ongoing",
+            "start_time": "2025-02-20 12:30",
+            "end_time": "2025-02-20 13:30",
+            "created_by": "María"
+        },
+        {
+            "id": 3,
+            "title": "Lavar los platos",
+            "description": "Limpiar los utensilios y platos usados.",
+            "state": "pending",
+            "start_time": "2025-02-20 14:00",
+            "end_time": "2025-02-20 14:30",
+            "created_by": "Carlos"
+        },
+        {
+            "id": 4,
+            "title": "Revisión del menú",
+            "description": "Actualizar el menú con nuevos ingredientes.",
+            "state": "ended",
+            "start_time": "2025-02-19 09:00",
+            "end_time": "2025-02-19 10:00",
+            "created_by": "Ana"
+        },
+        {
+            "id": 5,
+            "title": "Organizar nevera",
+            "description": "Revisar la fecha de caducidad de los productos.",
+            "state": "ongoing",
+            "start_time": "2025-02-21 08:00",
+            "end_time": "2025-02-21 09:00",
+            "created_by": "Pedro"
+        },
+        {
+            "id": 6,
+            "title": "Llamar a proveedores",
+            "description": "Confirmar la entrega de ingredientes frescos.",
+            "state": "pending",
+            "start_time": "2025-02-21 10:00",
+            "end_time": "2025-02-21 10:30",
+            "created_by": "Lucía"
+        },
+        {
+            "id": 7,
+            "title": "Realizar inventario",
+            "description": "Registrar los productos en stock y actualizar el sistema.",
+            "state": "ongoing",
+            "start_time": "2025-02-21 11:00",
+            "end_time": "2025-02-21 12:30",
+            "created_by": "Miguel"
+        },
+        {
+            "id": 8,
+            "title": "Capacitación del personal",
+            "description": "Entrenar a los nuevos empleados en la cocina.",
+            "state": "pending",
+            "start_time": "2025-02-22 15:00",
+            "end_time": "2025-02-22 17:00",
+            "created_by": "Sofía"
+        },
+        {
+            "id": 9,
+            "title": "Publicar en redes sociales",
+            "description": "Anunciar la promoción especial del día.",
+            "state": "ended",
+            "start_time": "2025-02-20 09:00",
+            "end_time": "2025-02-20 09:30",
+            "created_by": "Raúl"
+        },
+        {
+            "id": 10,
+            "title": "Limpiar la cocina",
+            "description": "Desinfectar superficies y organizar utensilios.",
+            "state": "ongoing",
+            "start_time": "2025-02-22 20:00",
+            "end_time": "2025-02-22 21:30",
+            "created_by": "Elena"
+        },
+        {
+            "id": 11,
+            "title": "Investigar nuevas tecnolog\u00edas",
+            "description": "Explorar nuevas tecnolog\u00edas que puedan ser \u00fatiles para el proyecto.",
+            "state": "pending",
+            "created_by": "Karen",
+            "start_time": "24-02-2025 09:00",
+            "end_time": "24-02-2025 17:00"
+        },
+        {
+            "id": 12,
+            "title": "Planificaci\u00f3n de sprint",
+            "description": "Organizar la planificaci\u00f3n del pr\u00f3ximo sprint.",
+            "state": "ongoing",
+            "created_by": "Larry",
+            "start_time": "23-02-2025 09:00",
+            "end_time": "23-02-2025 10:30"
+        },
+        {
+            "id": 14,
+            "title": "Organizar evento de equipo",
+            "description": "Planificar y organizar un evento de integraci\u00f3n para el equipo.",
+            "state": "pending",
+            "created_by": "Nina",
+            "start_time": "28-02-2025 09:00",
+            "end_time": "01-03-2025 12:00"
+        }
 ]

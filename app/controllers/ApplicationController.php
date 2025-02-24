@@ -114,10 +114,18 @@ function showDataAction(){
         $task = $this->taskModel->fetchTaskById($id);
     
         if ($task) {
-            $_SESSION['delete_popup'] = true; // Establece la sesión para mostrar el pop-up
-            $_SESSION['delete_task_id'] = $task['id']; // Almacena el ID de la tarea
-            $_SESSION['delete_task_title'] = $task['title']; // Almacena el título de la tarea
-            header("Location: " . WEB_ROOT . "/"); // Redirige a la vista de lista de tareas
+            $_SESSION['delete_popup'] = true; // Activa el pop-up de confirmación
+            $_SESSION['delete_task_id'] = $task['id']; // Guarda el ID de la tarea
+            $_SESSION['delete_task_title'] = $task['title']; // Guarda el título de la tarea
+    
+            // Redirige a la búsqueda si hay un término guardado en sesión
+            if (isset($_SESSION['last_search']) && !empty($_SESSION['last_search'])) {
+                $searchQuery = urlencode($_SESSION['last_search']);
+                header("Location: " . WEB_ROOT . "/search?search=$searchQuery");
+            } else {
+                // Si no hay búsqueda activa, redirige a la lista de tareas
+                header("Location: " . WEB_ROOT . "/");
+            }
             exit();
         } else {
             $_SESSION["error"] = "Tarea no encontrada.";
@@ -125,6 +133,8 @@ function showDataAction(){
             exit();
         }
     }
+     
+    
 
 function deleteAction(){
     //comprobaciones de seguridad
@@ -146,27 +156,26 @@ function deleteAction(){
 }
 
 function searchAction(){
-    //comprobacion y sanitización de carácteres introducidos
-        if(isset($_GET["search"])){
-            $search= trim($_GET["search"]);
-            $search= htmlspecialchars($search,ENT_QUOTES, 'UTF-8');
-        }
-     
-        $searchModified= iconv('UTF-8', 'ASCII//TRANSLIT', $search);
+    // Comprobación y sanitización de caracteres introducidos
+    if(isset($_GET["search"])){
+        $search = trim($_GET["search"]);
+        $search = htmlspecialchars($search, ENT_QUOTES, 'UTF-8');
+    
+        $searchModified = iconv('UTF-8', 'ASCII//TRANSLIT', $search);
         $searchNoAccents = str_replace(["'", "`", "^", "~"], "", $searchModified);
-        $this->taskModel->searchTask($searchNoAccents);
+
+        // Guarda la búsqueda en sesión para mantenerla tras eliminar
+        $_SESSION['last_search'] = $searchNoAccents;
     
-        if (count($this->taskModel->searchTask($searchNoAccents)) > 0){
-            $this->view->tasks= $this->taskModel->searchTask($searchNoAccents);
-    
-        }else{
-            $_SESSION["error"]= "No se ha encontrado ninguna tarea con este título";
+        if (count($this->taskModel->searchTask($searchNoAccents)) > 0) {
+            $this->view->tasks = $this->taskModel->searchTask($searchNoAccents);
+        } else {
+            $_SESSION["error"] = "No se ha encontrado ninguna tarea con este título";
             header("Location: " . WEB_ROOT . "/");
             exit(); 
         }
-    
-    
     }
+}
 }
 
 ?>
