@@ -107,25 +107,28 @@ function showDataAction(){
         }
         return date('d-m-Y H:i', $timestamp);
     }
-
     function deleteConfirmationAction()
     {
         $id = $_POST["id"] ?? null;
+        $source = $_POST["source"] ?? null; // Capturar el origen
         $task = $this->taskModel->fetchTaskById($id);
     
         if ($task) {
-            $_SESSION['delete_popup'] = true; // Activa el pop-up de confirmación
-            $_SESSION['delete_task_id'] = $task['id']; // Guarda el ID de la tarea
-            $_SESSION['delete_task_title'] = $task['title']; // Guarda el título de la tarea
+            $_SESSION['delete_popup'] = true;
+            $_SESSION['delete_task_id'] = $task['id'];
+            $_SESSION['delete_task_title'] = $task['title'];
     
-            // Redirige a la búsqueda si hay un término guardado en sesión
-            if (isset($_SESSION['last_search']) && !empty($_SESSION['last_search'])) {
-                $searchQuery = urlencode($_SESSION['last_search']);
-                header("Location: " . WEB_ROOT . "/search?search=$searchQuery");
-            } else {
-                // Si no hay búsqueda activa, redirige a la lista de tareas
-                header("Location: " . WEB_ROOT . "/");
+            // Redirige a búsqueda solo si 'source' es explícitamente "search"
+            if ($source === "search") {
+                $searchQuery = $_SESSION['last_search'] ?? '';
+                if (!empty($searchQuery)) {
+                    header("Location: " . WEB_ROOT . "/search?search=" . urlencode($searchQuery));
+                    exit();
+                }
             }
+    
+            // Si 'source' no es "search", ir al home
+            header("Location: " . WEB_ROOT . "/");
             exit();
         } else {
             $_SESSION["error"] = "Tarea no encontrada.";
@@ -133,6 +136,7 @@ function showDataAction(){
             exit();
         }
     }
+    
      
     
 
