@@ -1,15 +1,6 @@
 [
     {
-        "id": 4,
-        "title": "Revisi\u00f3n del men\u00fa",
-        "description": "Actualizar el men\u00fa con nuevos ingredientes.",
-        "state": "ended",
-        "start_time": "2025-02-19 09:00",
-        "end_time": "2025-02-19 10:00",
-        "created_by": "Ana"
-    },
-    {
-        "id": 5,
+        "id": 14,
         "title": "Organizar nevera",
         "description": "Revisar la fecha de caducidad de los productos.",
         "state": "ongoing",
@@ -18,7 +9,7 @@
         "created_by": "Pedro"
     },
     {
-        "id": 6,
+        "id": 13,
         "title": "Llamar a proveedores",
         "description": "Confirmar la entrega de ingredientes frescos.",
         "state": "pending",
@@ -27,16 +18,7 @@
         "created_by": "Luc\u00eda"
     },
     {
-        "id": 7,
-        "title": "Realizar inventario",
-        "description": "Registrar los productos en stock y actualizar el sistema.",
-        "state": "ongoing",
-        "start_time": "2025-02-21 11:00",
-        "end_time": "2025-02-21 12:30",
-        "created_by": "Miguel"
-    },
-    {
-        "id": 8,
+        "id": 12,
         "title": "Capacitaci\u00f3n del personal",
         "description": "Entrenar a los nuevos empleados en la cocina.",
         "state": "pending",
@@ -45,7 +27,7 @@
         "created_by": "Sof\u00eda"
     },
     {
-        "id": 9,
+        "id": 11,
         "title": "Publicar en redes sociales",
         "description": "Anunciar la promoci\u00f3n especial del d\u00eda.",
         "state": "ended",
@@ -63,7 +45,7 @@
         "created_by": "Elena"
     },
     {
-        "id": 11,
+        "id": 9,
         "title": "Investigar nuevas tecnolog\u00edas",
         "description": "Explorar nuevas tecnolog\u00edas que puedan ser \u00fatiles para el proyecto.",
         "state": "pending",
@@ -72,7 +54,7 @@
         "end_time": "24-02-2025 17:00"
     },
     {
-        "id": 12,
+        "id": 8,
         "title": "Planificaci\u00f3n de sprint",
         "description": "Organizar la planificaci\u00f3n del pr\u00f3ximo sprint.",
         "state": "ongoing",
@@ -81,7 +63,7 @@
         "end_time": "23-02-2025 10:30"
     },
     {
-        "id": 14,
+        "id": 7,
         "title": "Organizar evento de equipo",
         "description": "Planificar y organizar un evento de integraci\u00f3n para el equipo.",
         "state": "pending",

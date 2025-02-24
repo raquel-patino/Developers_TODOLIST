@@ -1,4 +1,6 @@
 <?php
+declare (strict_types = 1);
+
 require_once ROOT_PATH . '/lib/base/Controller.php';
 require_once ROOT_PATH . '/app/models/TaskModel.php';
 
@@ -15,23 +17,21 @@ class ApplicationController extends Controller {
         $this->taskModel= new Taskmodel("data_tasks.json");
     }
 
-function showDataAction(){
+    function showDataAction() : void 
+    {
+        $tasks =$this->taskModel->fetchAll();
 
-    $tasks =$this->taskModel->fetchAll();
-
-    if (!is_array($tasks)) {
-        $tasks = [];
+        if (!is_array($tasks)) {
+            $tasks = [];
+        }
+        // Si el primer elemento no es un array, lo convertimos en una lista de arrays
+        if (!empty($tasks) && !is_array(reset($tasks))) {
+            $tasks = [$tasks];
+        }
+        $this->view->tasks= $tasks;
     }
 
-    // Si el primer elemento no es un array, lo convertimos en una lista de arrays
-    if (!empty($tasks) && !is_array(reset($tasks))) {
-        $tasks = [$tasks];
-    }
-
-    $this->view->tasks= $tasks;
-}
-
-    function createTaskAction() 
+    function createTaskAction() : void
     { 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $taskData = [
@@ -46,14 +46,14 @@ function showDataAction(){
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
-                return $this->handleError("No se pudo crear la tarea.");
+                $this->handleError("No se pudo crear la tarea.");
             }
         }
     }
 
-    function editTaskAction()
+    function editTaskAction() : void
     {
-        $id = $_POST["id"] ?? null;
+        $id = $this->sanitizeId($_POST["id"] ?? null);
         $task = $this->taskModel->fetchTaskById($id);
 
         if ($task) {
@@ -65,7 +65,7 @@ function showDataAction(){
         }
     }
 
-    function updateTaskAction()
+    function updateTaskAction() : void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $taskData = [
@@ -82,19 +82,19 @@ function showDataAction(){
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
-                return $this->handleError("No se pudo actualizar la tarea.");
+                $this->handleError("No se pudo actualizar la tarea.");
             }
         }
     }
 
-    private function sanitizeText($text, $maxLength)
+    private function sanitizeText(string $text, int $maxLength) : string
     {
         $text = trim($text);
         $text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
         return mb_substr($text, 0, $maxLength);
     }
 
-    private function sanitizeDate($date)
+    private function sanitizeDate(?string $date) : ?string
     {
         if (empty($date)) {
             return null;
@@ -106,19 +106,24 @@ function showDataAction(){
         }
         return date('d-m-Y H:i', $timestamp);
     }
-    
-    function deleteConfirmationAction()
+
+    private function sanitizeId(mixed $id): ?int 
     {
-        $id = $_POST["id"] ?? null;
+    return filter_var($id, FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]) ?: null;
+    }
+    
+    function deleteConfirmationAction() : void
+    {
+        $id = $this->sanitizeId($_POST["id"] ?? null);
         $source = $_POST["source"] ?? null;
         $task = $this->taskModel->fetchTaskById($id);
     
         if (!$task) {
-            return $this->handleError("Tarea no encontrada.");
+            $this->handleError("Tarea no encontrada.");
+            exit();
         }
-    
         $this->storeTaskInSession($task);
-        return $this->redirectAfterDeleteConfirmation($source);
+        $this->redirectAfterDeleteConfirmation($source);
     }
 
     private function storeTaskInSession(array $task): void
@@ -146,46 +151,49 @@ function showDataAction(){
         exit();
     }
 
-function deleteAction(){
-    //comprobaciones de seguridad
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
-        $_SESSION["error"]= "Método incorrecto";
-        header("Location: " . WEB_ROOT . "/");
-        exit();
-    }
-    if ((!isset($_POST["id"])) || empty($_POST["id"])){
-            $_SESSION["error"]= "Esta tarea no se ha podido eliminar";
+    function deleteAction() : void
+    {
+        //comprobaciones de seguridad
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
+            $_SESSION["error"]= "Método incorrecto";
             header("Location: " . WEB_ROOT . "/");
             exit();
-    }
-        $id= $_POST["id"];
-        $this->taskModel->deleteTask($id);
-        $_SESSION["success"]= "La tarea se ha eliminado correctamente";
-        header("Location: " . WEB_ROOT . "/");
-        exit(); 
-}
-
-function searchAction(){
-    // Comprobación y sanitización de caracteres introducidos
-    if(isset($_GET["search"])){
-        $search = trim($_GET["search"]);
-        $search = htmlspecialchars($search, ENT_QUOTES, 'UTF-8');
-    
-        $searchModified = iconv('UTF-8', 'ASCII//TRANSLIT', $search);
-        $searchNoAccents = str_replace(["'", "`", "^", "~"], "", $searchModified);
-
-        // Guarda la búsqueda en sesión para mantenerla tras eliminar
-        $_SESSION['last_search'] = $searchNoAccents;
-    
-        if (count($this->taskModel->searchTask($searchNoAccents)) > 0) {
-            $this->view->tasks = $this->taskModel->searchTask($searchNoAccents);
-        } else {
-            $_SESSION["error"] = "No se ha encontrado ninguna tarea con este título";
+        }
+        
+        if ((!isset($_POST["id"])) || empty($_POST["id"])){
+                $_SESSION["error"]= "Esta tarea no se ha podido eliminar";
+                header("Location: " . WEB_ROOT . "/");
+                exit();
+        }
+            $id = $this->sanitizeId($_POST["id"]);
+            $this->taskModel->deleteTask($id);
+            $_SESSION["success"]= "La tarea se ha eliminado correctamente";
             header("Location: " . WEB_ROOT . "/");
             exit(); 
+    }
+
+    function searchAction() : void
+    {
+        // Comprobación y sanitización de caracteres introducidos
+        if(isset($_GET["search"])){
+            $search = trim($_GET["search"]);
+            $search = htmlspecialchars($search, ENT_QUOTES, 'UTF-8');
+        
+            $searchModified = iconv('UTF-8', 'ASCII//TRANSLIT', $search);
+            $searchNoAccents = str_replace(["'", "`", "^", "~"], "", $searchModified);
+
+            // Guarda la búsqueda en sesión para mantenerla tras eliminar
+            $_SESSION['last_search'] = $searchNoAccents;
+        
+            if (count($this->taskModel->searchTask($searchNoAccents)) > 0) {
+                $this->view->tasks = $this->taskModel->searchTask($searchNoAccents);
+            } else {
+                $_SESSION["error"] = "No se ha encontrado ninguna tarea con este título";
+                header("Location: " . WEB_ROOT . "/");
+                exit(); 
+            }
         }
     }
-}
 }
 
 ?>
