@@ -1,23 +1,5 @@
 [
     {
-        "id": 13,
-        "title": "Tarea de prueba",
-        "description": "evqrdcsavrfqcd",
-        "state": "ongoing",
-        "created_by": "Lena",
-        "start_time": "27-02-2025 12:12",
-        "end_time": "28-02-2025 12:12"
-    },
-    {
-        "id": 12,
-        "title": "Capacitaci\u00f3n del personal",
-        "description": "Entrenar a los nuevos empleados en la cocina.",
-        "state": "pending",
-        "start_time": "2025-02-22 15:00",
-        "end_time": "2025-02-22 17:00",
-        "created_by": "Sof\u00eda"
-    },
-    {
         "id": 11,
         "title": "Publicar en redes sociales",
         "description": "Anunciar la promoci\u00f3n especial del d\u00eda.",
