@@ -26,7 +26,7 @@ protected function loadData()
     }
 }
 
-public function fetchAll() : array
+    public function fetchAll() : array
     { 
         return $this->data;
     }
