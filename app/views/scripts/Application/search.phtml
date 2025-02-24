@@ -72,6 +72,7 @@
                         <form action="<?= WEB_ROOT?>/deleteConfirmation" method="post">
                             <button class="bg-[#C83804] text-white rounded-lg mt-2 mb-2 px-4 py-2 w-20" type="submit">Delete</button>
                             <input type="hidden" name="id" value="<?= $task["id"]?>">
+                            <input type="hidden" name="source" value="search">
                             </form>
                         </div>
                         <p class="text-gray-600 text-sm"><?= htmlspecialchars($task['description']) ?></p>

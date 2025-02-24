@@ -1,21 +1,66 @@
 [
     {
-        "id": 8,
-        "title": "Actualizar la base de datos",
-        "description": "Realizar actualizaciones necesarias en la base de datos.",
+        "id": 4,
+        "title": "Revisi\u00f3n del men\u00fa",
+        "description": "Actualizar el men\u00fa con nuevos ingredientes.",
+        "state": "ended",
+        "start_time": "2025-02-19 09:00",
+        "end_time": "2025-02-19 10:00",
+        "created_by": "Ana"
+    },
+    {
+        "id": 5,
+        "title": "Organizar nevera",
+        "description": "Revisar la fecha de caducidad de los productos.",
+        "state": "ongoing",
+        "start_time": "2025-02-21 08:00",
+        "end_time": "2025-02-21 09:00",
+        "created_by": "Pedro"
+    },
+    {
+        "id": 6,
+        "title": "Llamar a proveedores",
+        "description": "Confirmar la entrega de ingredientes frescos.",
         "state": "pending",
-        "created_by": "Henry",
-        "start_time": "19-02-2025 11:00",
-        "end_time": "19-02-2025 12:30"
+        "start_time": "2025-02-21 10:00",
+        "end_time": "2025-02-21 10:30",
+        "created_by": "Luc\u00eda"
+    },
+    {
+        "id": 7,
+        "title": "Realizar inventario",
+        "description": "Registrar los productos en stock y actualizar el sistema.",
+        "state": "ongoing",
+        "start_time": "2025-02-21 11:00",
+        "end_time": "2025-02-21 12:30",
+        "created_by": "Miguel"
+    },
+    {
+        "id": 8,
+        "title": "Capacitaci\u00f3n del personal",
+        "description": "Entrenar a los nuevos empleados en la cocina.",
+        "state": "pending",
+        "start_time": "2025-02-22 15:00",
+        "end_time": "2025-02-22 17:00",
+        "created_by": "Sof\u00eda"
+    },
+    {
+        "id": 9,
+        "title": "Publicar en redes sociales",
+        "description": "Anunciar la promoci\u00f3n especial del d\u00eda.",
+        "state": "ended",
+        "start_time": "2025-02-20 09:00",
+        "end_time": "2025-02-20 09:30",
+        "created_by": "Ra\u00fal"
     },
     {
         "id": 10,
-        "title": "Limpieza de proyecto",
-        "description": "Eliminar archivos innecesarios del proyecto.",
+        "title": "Limpiar la cocina",
+        "description": "Desinfectar superficies y organizar utensilios.",
         "state": "ongoing",
-        "created_by": "Jack",
-        "start_time": "22-02-2025 14:00",
-        "end_time": "28-02-2025 18:00"
+        "start_time": "2025-02-22 20:00",
+        "end_time": "2025-02-22 21:30",
+        "created_by": "Elena"
     },
     {
         "id": 11,

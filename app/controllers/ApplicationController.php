@@ -46,8 +46,7 @@ function showDataAction(){
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
-                $this->view->error = "No se pudo crear la tarea.";
-                exit();
+                return $this->handleError("No se pudo crear la tarea.");
             }
         }
     }
@@ -83,7 +82,7 @@ function showDataAction(){
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
-                $this->view->error = "No se pudo actualizar la tarea.";
+                return $this->handleError("No se pudo actualizar la tarea.");
             }
         }
     }
@@ -107,23 +106,44 @@ function showDataAction(){
         }
         return date('d-m-Y H:i', $timestamp);
     }
-
+    
     function deleteConfirmationAction()
     {
         $id = $_POST["id"] ?? null;
+        $source = $_POST["source"] ?? null;
         $task = $this->taskModel->fetchTaskById($id);
     
-        if ($task) {
-            $_SESSION['delete_popup'] = true; // Establece la sesión para mostrar el pop-up
-            $_SESSION['delete_task_id'] = $task['id']; // Almacena el ID de la tarea
-            $_SESSION['delete_task_title'] = $task['title']; // Almacena el título de la tarea
-            header("Location: " . WEB_ROOT . "/"); // Redirige a la vista de lista de tareas
-            exit();
-        } else {
-            $_SESSION["error"] = "Tarea no encontrada.";
-            header("Location: " . WEB_ROOT . "/");
-            exit();
+        if (!$task) {
+            return $this->handleError("Tarea no encontrada.");
         }
+    
+        $this->storeTaskInSession($task);
+        return $this->redirectAfterDeleteConfirmation($source);
+    }
+
+    private function storeTaskInSession(array $task): void
+    {
+        $_SESSION['delete_popup'] = true;
+        $_SESSION['delete_task_id'] = $task['id'];
+        $_SESSION['delete_task_title'] = $task['title'];
+    }
+
+    private function redirectAfterDeleteConfirmation(?string $source): void
+    {
+        if ($source === "search" && !empty($_SESSION['last_search'])) {
+            $searchQuery = urlencode($_SESSION['last_search']);
+            header("Location: " . WEB_ROOT . "/search?search=$searchQuery");
+        } else {
+            header("Location: " . WEB_ROOT . "/");
+        }
+        exit();
+    }
+
+    private function handleError(string $message): void
+    {
+        $_SESSION["error"] = $message;
+        header("Location: " . WEB_ROOT . "/");
+        exit();
     }
 
 function deleteAction(){
@@ -146,27 +166,26 @@ function deleteAction(){
 }
 
 function searchAction(){
-    //comprobacion y sanitización de carácteres introducidos
-        if(isset($_GET["search"])){
-            $search= trim($_GET["search"]);
-            $search= htmlspecialchars($search,ENT_QUOTES, 'UTF-8');
-        }
-     
-        $searchModified= iconv('UTF-8', 'ASCII//TRANSLIT', $search);
+    // Comprobación y sanitización de caracteres introducidos
+    if(isset($_GET["search"])){
+        $search = trim($_GET["search"]);
+        $search = htmlspecialchars($search, ENT_QUOTES, 'UTF-8');
+    
+        $searchModified = iconv('UTF-8', 'ASCII//TRANSLIT', $search);
         $searchNoAccents = str_replace(["'", "`", "^", "~"], "", $searchModified);
-        $this->taskModel->searchTask($searchNoAccents);
+
+        // Guarda la búsqueda en sesión para mantenerla tras eliminar
+        $_SESSION['last_search'] = $searchNoAccents;
     
-        if (count($this->taskModel->searchTask($searchNoAccents)) > 0){
-            $this->view->tasks= $this->taskModel->searchTask($searchNoAccents);
-    
-        }else{
-            $_SESSION["error"]= "No se ha encontrado ninguna tarea con este título";
+        if (count($this->taskModel->searchTask($searchNoAccents)) > 0) {
+            $this->view->tasks = $this->taskModel->searchTask($searchNoAccents);
+        } else {
+            $_SESSION["error"] = "No se ha encontrado ninguna tarea con este título";
             header("Location: " . WEB_ROOT . "/");
             exit(); 
         }
-    
-    
     }
+}
 }
 
 ?>
