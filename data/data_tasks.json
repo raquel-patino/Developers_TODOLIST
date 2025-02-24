@@ -1,21 +1,12 @@
 [
     {
-        "id": 14,
-        "title": "Organizar nevera",
-        "description": "Revisar la fecha de caducidad de los productos.",
-        "state": "ongoing",
-        "start_time": "2025-02-21 08:00",
-        "end_time": "2025-02-21 09:00",
-        "created_by": "Pedro"
-    },
-    {
         "id": 13,
-        "title": "Llamar a proveedores",
-        "description": "Confirmar la entrega de ingredientes frescos.",
-        "state": "pending",
-        "start_time": "2025-02-21 10:00",
-        "end_time": "2025-02-21 10:30",
-        "created_by": "Luc\u00eda"
+        "title": "Tarea de prueba",
+        "description": "evqrdcsavrfqcd",
+        "state": "ongoing",
+        "created_by": "Lena",
+        "start_time": "27-02-2025 12:12",
+        "end_time": "28-02-2025 12:12"
     },
     {
         "id": 12,
