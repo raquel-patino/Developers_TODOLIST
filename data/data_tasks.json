@@ -1,101 +1,47 @@
 [
     {
-        "id": 18,
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet,",
+        "id": 8,
+        "title": "Actualizar la base de datos",
+        "description": "Realizar actualizaciones necesarias en la base de datos.",
         "state": "pending",
-        "created_by": "Lorem ipsum dolor sit amet, co",
-        "start_time": "23-02-2025 12:12",
-        "end_time": "09-03-2025 12:12"
+        "created_by": "Henry",
+        "start_time": "19-02-2025 11:00",
+        "end_time": "19-02-2025 12:30"
     },
     {
-        "id": 17,
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, consectetur adipiscingjbhkjblnkLorem ipsum dolor sit amet, ",
+        "id": 10,
+        "title": "Limpieza de proyecto",
+        "description": "Eliminar archivos innecesarios del proyecto.",
         "state": "ongoing",
-        "created_by": "Lorem ipsum dolor sit ametLore",
-        "start_time": "24-02-2025 12:12",
-        "end_time": "27-02-2025 12:12"
-    },
-    {
-        "id": 16,
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mollis, tellus accumsan blandit varius, velit arcu maximus nulla, vitae porttitor purus lectus vel velit. Nulla accumsan tortor sit amet nibh sollicitudin consectetur. Cras quis interdum nibh. Phasellus varius efficitur posuere. Maecenas suscipit sem ut nulla egestas, quis viverra urna posuere. Phasellus scelerisque libero consectetur convallis luctus. Mauris aliquet, nulla nec sodales ultrices, nulla nulla euismod est, eu ornare d",
-        "state": "pending",
-        "created_by": "Lorem ipsum dolor sit amet, co",
-        "start_time": "23-02-2025 12:12",
-        "end_time": "25-02-2025 12:12"
-    },
-    {
-        "id": 15,
-        "title": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Ac",
-        "description": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Acchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Ac",
-        "state": "ongoing",
-        "created_by": "chmod 666 \/Applications\/XAMPP\/",
-        "start_time": "23-02-2025 12:12",
-        "end_time": "23-02-2025 12:12"
-    },
-    {
-        "id": 14,
-        "title": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Ac",
-        "description": "chmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json\r\nchmod 666 \/Applications\/XAMPP\/xamppfiles\/htdocs\/Academy\/Developers_TODOLIST\/data\/data_tasks.json",
-        "state": "ongoing",
-        "created_by": "chmod 666 \/Applications\/XAMPP\/",
-        "start_time": "23-02-2025 12:12",
-        "end_time": "01-03-2025 12:12"
-    },
-    {
-        "id": 13,
-        "title": "Otra prueba de fechas m\u00e1s",
-        "description": "rvewrvew",
-        "state": "pending",
-        "created_by": "Lena",
-        "start_time": "2025-02-12 12:12",
-        "end_time": "2025-03-09 12:12"
-    },
-    {
-        "id": 12,
-        "title": "Otra prueba de fechas",
-        "description": "revebvbvf",
-        "state": "pending",
-        "created_by": "Lena",
-        "start_time": "2025-02-24 12:12",
-        "end_time": "2025-02-27 12:12"
+        "created_by": "Jack",
+        "start_time": "22-02-2025 14:00",
+        "end_time": "28-02-2025 18:00"
     },
     {
         "id": 11,
-        "title": "Prueba de fechas",
-        "description": "recqdx",
-        "state": "ongoing",
-        "created_by": "Lena",
-        "start_time": "2025-02-23 12:12",
-        "end_time": "2025-02-28 12:12"
+        "title": "Investigar nuevas tecnolog\u00edas",
+        "description": "Explorar nuevas tecnolog\u00edas que puedan ser \u00fatiles para el proyecto.",
+        "state": "pending",
+        "created_by": "Karen",
+        "start_time": "24-02-2025 09:00",
+        "end_time": "24-02-2025 17:00"
     },
     {
-        "id": 8,
-        "title": "Refactorizar",
-        "description": "Probando los filtros",
+        "id": 12,
+        "title": "Planificaci\u00f3n de sprint",
+        "description": "Organizar la planificaci\u00f3n del pr\u00f3ximo sprint.",
         "state": "ongoing",
-        "created_by": "Lena",
-        "start_time": "2025-02-28T12:12",
-        "end_time": "2025-03-09T13:13"
+        "created_by": "Larry",
+        "start_time": "23-02-2025 09:00",
+        "end_time": "23-02-2025 10:30"
     },
     {
-        "id": 6,
-        "title": "Edicci\u00f3n",
-        "description": "Primera prueba despues de hacer merge de createTask y develop",
-        "state": "ongoing",
-        "created_by": "Lena",
-        "start_time": "2025-02-22T12:12",
-        "end_time": "2025-02-26T13:13"
-    },
-    {
-        "id": 7,
-        "title": "Segunda prueba de edicci\u00f3n",
-        "description": "Probando el mensaje de confirmaci\u00f3n",
-        "state": "ongoing",
-        "created_by": "Lena",
-        "start_time": "2025-02-20T12:12",
-        "end_time": "2025-02-28T13:13"
+        "id": 14,
+        "title": "Organizar evento de equipo",
+        "description": "Planificar y organizar un evento de integraci\u00f3n para el equipo.",
+        "state": "pending",
+        "created_by": "Nina",
+        "start_time": "28-02-2025 09:00",
+        "end_time": "01-03-2025 12:00"
     }
 ]

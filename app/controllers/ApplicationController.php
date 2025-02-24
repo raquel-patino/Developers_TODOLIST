@@ -108,6 +108,24 @@ function showDataAction(){
         return date('d-m-Y H:i', $timestamp);
     }
 
+    function deleteConfirmationAction()
+    {
+        $id = $_POST["id"] ?? null;
+        $task = $this->taskModel->fetchTaskById($id);
+    
+        if ($task) {
+            $_SESSION['delete_popup'] = true; // Establece la sesión para mostrar el pop-up
+            $_SESSION['delete_task_id'] = $task['id']; // Almacena el ID de la tarea
+            $_SESSION['delete_task_title'] = $task['title']; // Almacena el título de la tarea
+            header("Location: " . WEB_ROOT . "/"); // Redirige a la vista de lista de tareas
+            exit();
+        } else {
+            $_SESSION["error"] = "Tarea no encontrada.";
+            header("Location: " . WEB_ROOT . "/");
+            exit();
+        }
+    }
+
 function deleteAction(){
     //comprobaciones de seguridad
     if ($_SERVER['REQUEST_METHOD'] !== 'POST'){

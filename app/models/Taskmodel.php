@@ -82,7 +82,7 @@ public function fetchAll()
         return false;
     }  
     
-public function deleteTask($id){
+    public function deleteTask($id){
         $tasksReduced= [];
         foreach ($this->data as $task){
             if ($task["id"] != $id){

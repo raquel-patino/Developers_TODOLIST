@@ -32,6 +32,9 @@
 <?php if (isset($_SESSION['popup_data'])): ?>
     <?php include 'updateTask.phtml'; ?>
 <?php endif; ?>
+<?php if (isset($_SESSION['delete_popup'])): ?>
+    <?php include 'deleteConfirmation.phtml'; ?>
+<?php endif; ?>
 
         <!-- Botón para agregar tarea -->
         <div class="flex justify-between items-center mb-4">
@@ -66,7 +69,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                         <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['title']) ?></h2>
-                        <form action="<?= WEB_ROOT?>/delete" method="post">
+                        <form action="<?= WEB_ROOT?>/deleteConfirmation" method="post">
                             <button class="bg-[#C83804] text-white rounded-lg mt-2 mb-2 px-4 py-2 w-20" type="submit">Delete</button>
                             <input type="hidden" name="id" value="<?= $task["id"]?>">
                             </form>
