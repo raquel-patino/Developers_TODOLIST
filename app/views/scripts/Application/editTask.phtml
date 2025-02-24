@@ -8,21 +8,21 @@
 </head>
 <body class="bg-[#F2E2CE] p-8">
 <div class="max-w-4xl mx-auto bg-[#732412] p-6 rounded-lg shadow-2xl" style="box-shadow: 0 4px 20px #732412">
-        <h1 class="text-center text-5xl underline underline-offset-8 rounded-lg font-serif font-bold text-[#FDD7AA] 
+        <h1 class="text-center text-5xl underline underline-offset-8 rounded-lg font-serif text-[#FDD7AA] 
         mb-12 mt-2 mx-auto">EDIT TASK</h1>
 
     <form action="<?php echo WEB_ROOT; ?>/updateTask" method="POST" class="space-y-4">
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($this->task['id']); ?>">
 
             <div>
-                <label for="title" class="block text-2xl font-serif font-bold text-[#FDD7AA]">Title</label>
+                <label for="title" class="block text-2xl font-serif text-[#FDD7AA]">Title</label>
                 <input type="text" id="title" name="title" required maxlength="50" 
                        value="<?php echo htmlspecialchars($this->task['title']); ?>"
                        class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
 
             <div>
-                <label for="state" class="block text-2xl font-serif font-bold text-[#FDD7AA]">State</label>
+                <label for="state" class="block text-2xl font-serif text-[#FDD7AA]">State</label>
                 <select id="state" name="state" required 
                         class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
                     <option value="pending" <?php echo $this->task['state'] == 'pending' ? 'selected' : ''; ?>>Pending</option>
@@ -32,27 +32,27 @@
             </div>
 
             <div>
-                <label for="description" class="block text-2xl font-serif font-bold text-[#FDD7AA]">Description</label>
+                <label for="description" class="block text-2xl font-serif text-[#FDD7AA]">Description</label>
                 <textarea id="description" name="description" required maxlength="500" 
                           class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"><?php echo htmlspecialchars($this->task['description']); ?></textarea>
             </div>
 
             <div>
-                <label for="start_time" class="block text-2xl font-serif font-bold text-[#FDD7AA]">Starting Time</label>
+                <label for="start_time" class="block text-2xl font-serif text-[#FDD7AA]">Starting Time</label>
                 <input type="datetime-local" id="start_time" name="start_time" required 
                        value="<?php echo date('Y-m-d\TH:i', strtotime($this->task['start_time'])); ?>"
                        class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
 
             <div>
-                <label for="end_time" class="block text-2xl font-serif font-bold text-[#FDD7AA]">Ending Time</label>
+                <label for="end_time" class="block text-2xl font-serif text-[#FDD7AA]">Ending Time</label>
                 <input type="datetime-local" id="end_time" name="end_time" required 
                        value="<?php echo date('Y-m-d\TH:i', strtotime($this->task['end_time'])); ?>"
                        class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
             </div>
 
             <div>
-                <label for="created_by" class="block text-2xl font-serif font-bold text-[#FDD7AA]">Created by</label>
+                <label for="created_by" class="block text-2xl font-serif text-[#FDD7AA]">Created by</label>
                 <input type="text" id="created_by" name="created_by" required maxlength="30" 
                        value="<?php echo htmlspecialchars($this->task['created_by']); ?>"
                        class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">

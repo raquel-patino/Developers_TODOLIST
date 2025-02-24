@@ -1,32 +1,5 @@
 [
     {
-        "id": 14,
-        "title": "Organizar nevera",
-        "description": "Revisar la fecha de caducidad de los productos.",
-        "state": "ongoing",
-        "start_time": "2025-02-21 08:00",
-        "end_time": "2025-02-21 09:00",
-        "created_by": "Pedro"
-    },
-    {
-        "id": 13,
-        "title": "Llamar a proveedores",
-        "description": "Confirmar la entrega de ingredientes frescos.",
-        "state": "pending",
-        "start_time": "2025-02-21 10:00",
-        "end_time": "2025-02-21 10:30",
-        "created_by": "Luc\u00eda"
-    },
-    {
-        "id": 12,
-        "title": "Capacitaci\u00f3n del personal",
-        "description": "Entrenar a los nuevos empleados en la cocina.",
-        "state": "pending",
-        "start_time": "2025-02-22 15:00",
-        "end_time": "2025-02-22 17:00",
-        "created_by": "Sof\u00eda"
-    },
-    {
         "id": 11,
         "title": "Publicar en redes sociales",
         "description": "Anunciar la promoci\u00f3n especial del d\u00eda.",
