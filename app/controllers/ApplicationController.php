@@ -46,8 +46,7 @@ function showDataAction(){
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
-                $this->view->error = "No se pudo crear la tarea.";
-                exit();
+                return $this->handleError("No se pudo crear la tarea.");
             }
         }
     }
@@ -83,7 +82,7 @@ function showDataAction(){
                 header('Location: ' . WEB_ROOT . '/');
                 exit();
             } else {
-                $this->view->error = "No se pudo actualizar la tarea.";
+                return $this->handleError("No se pudo actualizar la tarea.");
             }
         }
     }
@@ -107,38 +106,45 @@ function showDataAction(){
         }
         return date('d-m-Y H:i', $timestamp);
     }
+    
     function deleteConfirmationAction()
     {
         $id = $_POST["id"] ?? null;
-        $source = $_POST["source"] ?? null; // Capturar el origen
+        $source = $_POST["source"] ?? null;
         $task = $this->taskModel->fetchTaskById($id);
     
-        if ($task) {
-            $_SESSION['delete_popup'] = true;
-            $_SESSION['delete_task_id'] = $task['id'];
-            $_SESSION['delete_task_title'] = $task['title'];
-    
-            // Redirige a búsqueda solo si 'source' es explícitamente "search"
-            if ($source === "search") {
-                $searchQuery = $_SESSION['last_search'] ?? '';
-                if (!empty($searchQuery)) {
-                    header("Location: " . WEB_ROOT . "/search?search=" . urlencode($searchQuery));
-                    exit();
-                }
-            }
-    
-            // Si 'source' no es "search", ir al home
-            header("Location: " . WEB_ROOT . "/");
-            exit();
-        } else {
-            $_SESSION["error"] = "Tarea no encontrada.";
-            header("Location: " . WEB_ROOT . "/");
-            exit();
+        if (!$task) {
+            return $this->handleError("Tarea no encontrada.");
         }
+    
+        $this->storeTaskInSession($task);
+        return $this->redirectAfterDeleteConfirmation($source);
     }
-    
-     
-    
+
+    private function storeTaskInSession(array $task): void
+    {
+        $_SESSION['delete_popup'] = true;
+        $_SESSION['delete_task_id'] = $task['id'];
+        $_SESSION['delete_task_title'] = $task['title'];
+    }
+
+    private function redirectAfterDeleteConfirmation(?string $source): void
+    {
+        if ($source === "search" && !empty($_SESSION['last_search'])) {
+            $searchQuery = urlencode($_SESSION['last_search']);
+            header("Location: " . WEB_ROOT . "/search?search=$searchQuery");
+        } else {
+            header("Location: " . WEB_ROOT . "/");
+        }
+        exit();
+    }
+
+    private function handleError(string $message): void
+    {
+        $_SESSION["error"] = $message;
+        header("Location: " . WEB_ROOT . "/");
+        exit();
+    }
 
 function deleteAction(){
     //comprobaciones de seguridad

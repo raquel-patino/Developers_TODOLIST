@@ -1,14 +1,5 @@
 [
     {
-        "id": 3,
-        "title": "Lavar los platos",
-        "description": "Limpiar los utensilios y platos usados.",
-        "state": "pending",
-        "start_time": "2025-02-20 14:00",
-        "end_time": "2025-02-20 14:30",
-        "created_by": "Carlos"
-    },
-    {
         "id": 4,
         "title": "Revisi\u00f3n del men\u00fa",
         "description": "Actualizar el men\u00fa con nuevos ingredientes.",
