@@ -75,6 +75,7 @@
                         <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['title']) ?></h2>
                         <form action="<?php echo WEB_ROOT; ?>/deleteConfirmation" method="POST" class="inline">
                             <input type="hidden" name="id" value="<?= $task['id']; ?>">
+                            <input type="hidden" name="source" value="search">
                             <button class="bg-[#C94121] hover:bg-[#E65A37] text-white rounded-lg mt-2 mb-2 px-4 py-2 w-20" type="submit">Delete</button>
                             </form>
                         </div>
