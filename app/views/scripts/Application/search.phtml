@@ -6,25 +6,17 @@
     <title>My To-Do</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
-    <div class="max-w-3xl mx-auto bg-teal-100 p-6 rounded-lg shadow-lg">
-    <div class="relative flex justify-center items-center mb-4">
-        <h1 class="text-center text-3xl bg-gray-100 rounded-lg w-1/2 font-serif font-bold text-gray-800 
-          mx-auto">MY TO-DO</h1>
-         <a href="<?= WEB_ROOT ?>/" class="flex items-center bg-blue-500 text-white rounded-lg px-5 py-1 hover:bg-blue-700 absolute right-4">Home
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="ml-2 size-6">
-        <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
-        <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
-    </svg>
-    </a>
-    </div>
-        <?php if (isset($_SESSION["success"])): ?>
+<body class="bg-[#F2E2CE] p-8">
+<div class="max-w-4xl mx-auto bg-[#732412] p-6 rounded-lg shadow-2xl" style= "box-shadow: 0 4px 20px #732412">
+    <h1 class="text-center text-5xl underline underline-offset-8 rounded-lg font-serif text-[#FDD7AA] 
+    mb-12 mt-2 mx-auto">MY TO-DO LIST</h1>
+    <?php if (isset($_SESSION["success"])): ?>
         <div class="bg-green-200 text-green-800 p-4 rounded-lg mb-4">
             <?= $_SESSION["success"]; ?>
         </div>
      <?php unset($_SESSION["success"]);?>
      <?php elseif (isset($_SESSION["error"])): ?>
-        <div class="bg-red-200 text-red-800 p-4 rounded-lg mb-4">
+        <div class="bg-red-300 text-red-950 p-4 rounded-lg mb-4">
             <?= $_SESSION["error"]; ?>
         </div>
  <?php unset($_SESSION["error"]);?> 
@@ -39,43 +31,54 @@
         <!-- Botón para agregar tarea -->
         <div class="flex justify-between items-center mb-4">
         <a href="<?= WEB_ROOT?>/createTask">
-            <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
-                <span class="text-lg">➕</span>
-                <span class="ml-2">New Task</span>
+            <button class="bg-[#F2E2CE] hover:bg-orange-50 text-[#732412] px-4 py-2 rounded-lg flex items-center">
+                <span class="text-lg font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
+                </svg>
+                </span>
+                <span class="font-bold ml-2">New Task</span>
                 </button>
         </a>
-            <form action="<?= WEB_ROOT?>/search" method="get">
-                <input type="text" name= "search" placeholder="Search title..."class="border px-4 py-2 rounded-lg w-3/3">
+        <div class="flex items-center gap-2 ">
+        <a href="<?= WEB_ROOT ?>/" class="flex items-center bg-[#F2E2CE] text-[#732412] hover:bg-orange-50 rounded-lg px-3 py-2 hover:bg-blue-700 w-3/3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+            <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+        </svg>
+        </a>
+            <form action="<?= WEB_ROOT?>/search" method="get" class="flex items-center mt-4">
+                <input type="text" name= "search" placeholder="Search title..."class="bg-orange-50 border px-4 py-2 rounded-lg w-3/3">
             </form>
+        </div>
         </div>
 
         <!-- Lista de tareas -->
         <ul class="space-y-4">
             <?php if(count($this->tasks)>0): ?>
                 <?php foreach ($this->tasks as $task): ?>
-                    <li class="bg-white p-4 rounded-lg shadow flex flex-col">
+                    <li class="bg-orange-50 p-4 rounded-lg shadow flex flex-col">
                         <div class="flex justify-between items-center">
-                            <span class="px-4 py-2 rounded-full text-white text-xs font-bold 
+                            <span class="w-20 h-8 flex items-center justify-center rounded-full text-white text-xs font-bold 
                                 <?php 
-                                    echo $task['state'] === 'pending' ? 'bg-orange-500' : 
-                                         ($task['state'] === 'ongoing' ? 'bg-green-500' : 'bg-red-500'); 
+                                    echo $task['state'] === 'pending' ? 'bg-[#C94122]' : 
+                                         ($task['state'] === 'ongoing' ? 'bg-[#147350]' : 'bg-[#E6AE00]'); 
                                 ?>">
                                 <?= ucfirst($task['state']) ?>
                             </span>
                             <form action="<?php echo WEB_ROOT; ?>/editTask" method="POST" class="inline">
                                 <input type="hidden" name="id" value="<?= $task['id']; ?>">
-                                <button class="bg-[#348888] text-white rounded-lg px-4 py-2 w-20" type="submit">Edit</button>
+                                <button class="bg-[#147350] hover:bg-[#4CB98D] text-white rounded-lg px-4 py-2 w-20" type="submit">Edit</button>
                             </form>
                         </div>
                         <div class="flex justify-between items-center">
                         <h2 class="text-lg font-bold mt-2"><?= htmlspecialchars($task['title']) ?></h2>
-                        <form action="<?= WEB_ROOT?>/deleteConfirmation" method="post">
-                            <button class="bg-[#C83804] text-white rounded-lg mt-2 mb-2 px-4 py-2 w-20" type="submit">Delete</button>
-                            <input type="hidden" name="id" value="<?= $task["id"]?>">
-                            <input type="hidden" name="source" value="search">
+                        <form action="<?php echo WEB_ROOT; ?>/deleteConfirmation" method="POST" class="inline">
+                            <input type="hidden" name="id" value="<?= $task['id']; ?>">
+                            <button class="bg-[#C94121] hover:bg-[#E65A37] text-white rounded-lg mt-2 mb-2 px-4 py-2 w-20" type="submit">Delete</button>
                             </form>
                         </div>
-                        <p class="text-gray-600 text-sm"><?= htmlspecialchars($task['description']) ?></p>
+                        <p class="text-gray-600 text-sm mr-24"><?= htmlspecialchars($task['description']) ?></p>
                         <div class="text-gray-500 text-xs mt-2">
                             <span>Start time: <?=($task['start_time']) ?> </span> 
                             <span>End time: <?=($task['end_time']) ?></span> | 

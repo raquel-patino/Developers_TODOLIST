@@ -54,7 +54,7 @@
         "created_by": "Elena"
     },
     {
-        "id": 11,
+        "id": 9,
         "title": "Investigar nuevas tecnolog\u00edas",
         "description": "Explorar nuevas tecnolog\u00edas que puedan ser \u00fatiles para el proyecto.",
         "state": "pending",
@@ -63,7 +63,7 @@
         "end_time": "24-02-2025 17:00"
     },
     {
-        "id": 12,
+        "id": 8,
         "title": "Planificaci\u00f3n de sprint",
         "description": "Organizar la planificaci\u00f3n del pr\u00f3ximo sprint.",
         "state": "ongoing",
@@ -72,7 +72,7 @@
         "end_time": "23-02-2025 10:30"
     },
     {
-        "id": 14,
+        "id": 7,
         "title": "Organizar evento de equipo",
         "description": "Planificar y organizar un evento de integraci\u00f3n para el equipo.",
         "state": "pending",

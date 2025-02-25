@@ -1,11 +1,12 @@
 <?php
+declare (strict_types = 1);
 
 class Taskmodel {
 
 protected $filePath= "";
 protected $data= [];
 
-function __construct($file)
+function __construct(string $file)
 {
     $this->filePath= ROOT_PATH . '/data/'. $file;
     $this->loadData();
@@ -25,22 +26,22 @@ protected function loadData()
     }
 }
 
-public function fetchAll()
+    public function fetchAll() : array
     { 
         return $this->data;
     }
 
-    public function fetchTaskById($id) 
+    public function fetchTaskById(int $id) : ?array 
     {
         foreach ($this->data as $task) {
-            if ($task['id'] == $id) {
+            if ($task['id'] === $id) {
                 return $task;
             }
         }
         return null;
     }
 
-    public function createTask(array $taskData) 
+    public function createTask(array $taskData) : bool
     {
         $newTask = [
             'id' => $this->generateId(),
@@ -55,18 +56,18 @@ public function fetchAll()
         return $this->saveData();
     }
     
-    protected function generateId() 
+    protected function generateId() : int
     {
         $ids = array_column($this->data, 'id');
         return empty($ids) ? 1 : max($ids) + 1;
     }
 
-    protected function saveData() 
+    protected function saveData() : bool
     {
         return file_put_contents($this->filePath, json_encode($this->data, JSON_PRETTY_PRINT))!== false;
     }
     
-    public function updateTask(array $taskData)
+    public function updateTask(array $taskData) : bool
     {
         foreach ($this->data as &$task) {
             if ($task['id'] == $taskData['id']) {
@@ -82,7 +83,7 @@ public function fetchAll()
         return false;
     }  
     
-    public function deleteTask($id){
+    public function deleteTask(int $id) {
         $tasksReduced= [];
         foreach ($this->data as $task){
             if ($task["id"] != $id){
@@ -94,7 +95,7 @@ public function fetchAll()
     
     }
 
-    public function searchTask($taskSearched){
+    public function searchTask(string $taskSearched) : array {
         $tasksFound = [];
         
         foreach ($this->data as $task){
