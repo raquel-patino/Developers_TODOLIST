@@ -1,6 +1,24 @@
 [
     {
-        "id": 11,
+        "id": 7,
+        "title": "Realizar inventario",
+        "description": "Registrar los productos en stock y actualizar el sistema.",
+        "state": "ongoing",
+        "start_time": "2025-02-21 11:00",
+        "end_time": "2025-02-21 12:30",
+        "created_by": "Miguel"
+    },
+    {
+        "id": 8,
+        "title": "Capacitaci\u00f3n del personal",
+        "description": "Entrenar a los nuevos empleados en la cocina.",
+        "state": "pending",
+        "start_time": "2025-02-22 15:00",
+        "end_time": "2025-02-22 17:00",
+        "created_by": "Sof\u00eda"
+    },
+    {
+        "id": 9,
         "title": "Publicar en redes sociales",
         "description": "Anunciar la promoci\u00f3n especial del d\u00eda.",
         "state": "ended",
