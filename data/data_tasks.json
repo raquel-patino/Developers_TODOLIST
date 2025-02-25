@@ -1,14 +1,5 @@
 [
     {
-        "id": 4,
-        "title": "Revisi\u00f3n del men\u00fa",
-        "description": "Actualizar el men\u00fa con nuevos ingredientes.",
-        "state": "ended",
-        "start_time": "2025-02-19 09:00",
-        "end_time": "2025-02-19 10:00",
-        "created_by": "Ana"
-    },
-    {
         "id": 5,
         "title": "Organizar nevera",
         "description": "Revisar la fecha de caducidad de los productos.",
