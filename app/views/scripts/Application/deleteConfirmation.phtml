@@ -1,0 +1,36 @@
+<?php if (isset($_SESSION['delete_popup'])): ?>
+    <div id="popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+        <div class="max-w-md w-full bg-[#732412] p-6 rounded-lg shadow-2xl" style="box-shadow: 0 4px 20px #732412;">
+            <h2 class="text-xl text-[#FDD7AA] mb-2 flex items-center">
+                Delete Task
+            </h2>
+            <div class="bg-[#F2E2CE] p-4 rounded-lg shadow-2xl">
+                <p class="text-sm text-gray-700 text-center">
+                    <strong><?= htmlspecialchars($_SESSION['delete_task_title']) ?></strong>
+                </p>
+            </div>
+            <div class="mt-4 flex justify-between">
+                <button onclick="closePopup()" class="w-1/2 bg-[#F2E2CE] text-[#732412] py-2 rounded-lg hover:bg-orange-50 transition duration-300 mr-2">
+                    Cancel
+                </button>
+                <form action="<?= WEB_ROOT ?>/delete" method="POST" class="w-1/2">
+                    <input type="hidden" name="id" value="<?= $_SESSION['delete_task_id']; ?>">
+                    <button type="submit" class="w-full bg-[#C94121] text-white py-2 rounded-lg hover:bg-[#E65A37] transition duration-300">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+    <?php unset($_SESSION['delete_popup']); ?>
+    <?php unset($_SESSION['delete_task_id']); ?>
+    <?php unset($_SESSION['delete_task_title']); ?>
+<?php endif; ?>
+
+
+

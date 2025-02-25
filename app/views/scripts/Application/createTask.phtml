@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#F2E2CE] p-8">
+    <div class="max-w-4xl mx-auto bg-[#732412] p-6 rounded-lg shadow-2xl" style="box-shadow: 0 4px 20px #732412">
+        <h1 class="text-center text-5xl underline underline-offset-8 rounded-lg font-serif text-[#FDD7AA] 
+        mb-12 mt-2 mx-auto">NEW TASK</h1>
+
+        <form action="<?= WEB_ROOT?>/createTask" method="POST" class="space-y-4">
+            <div>
+                <label for="title" class="block text-2xl font-serif text-[#FDD7AA]">Title</label>
+                <input type="text" id="title" name="title" required maxlength="50"
+                       placeholder="Enter the task title"
+                       title="Maximum 50 characters allowed"
+                       class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div>
+                <label for="state" class="block text-2xl font-serif text-[#FDD7AA]">State</label>
+                <select id="state" name="state" required 
+                        class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <option value="" disabled selected>Select a state</option>
+                    <option value="pending">Pending</option>
+                    <option value="ongoing">Ongoing</option>
+                    <option value="ended">Ended</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="description" class="block text-2xl font-serif text-[#FDD7AA]">Description</label>
+                <textarea id="description" name="description" required maxlength="500"
+                          placeholder="Describe the task in detail"
+                          title="Maximum 500 characters allowed"
+                          class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+            </div>
+
+            <div>
+                <label for="start_time" class="block text-2xl font-serif text-[#FDD7AA]">Starting Time</label>
+                <input type="datetime-local" id="start_time" name="start_time" required 
+                       class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div>
+                <label for="end_time" class="block text-2xl font-serif text-[#FDD7AA]">Ending Time</label>
+                <input type="datetime-local" id="end_time" name="end_time" required 
+                       class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div>
+                <label for="created_by" class="block text-2xl font-serif text-[#FDD7AA]">Created by</label>
+                <input type="text" id="created_by" name="created_by" required maxlength="30"
+                       placeholder="Enter your name"
+                       class="bg-orange-50 mt-1 p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+            </div>
+
+            <div class="mt-4 flex justify-between">
+                <button type="button" onclick="history.back()" 
+                    class="w-1/2 text-white py-2 rounded-lg bg-[#C94121] hover:bg-[#E65A37] transition duration-300 mr-2">
+                    Cancel
+                </button>
+                <button type="submit" 
+                    class="w-1/2 text-white py-2 rounded-lg bg-[#147350] hover:bg-[#4CB98D] transition duration-300 mr-2">
+                    Create Task
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
